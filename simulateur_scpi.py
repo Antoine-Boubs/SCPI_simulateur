@@ -173,7 +173,7 @@ st.markdown("""
         margin-bottom: 10px;
     }
 
-    div[data-testid="stSlider"] label {
+    div[data-testid="stSlider"] p {
         font-size: 24px;
         color: #CBA328;
         font-weight: bold;
