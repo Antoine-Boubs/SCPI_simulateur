@@ -33,10 +33,28 @@ st.markdown(f"""
 st.markdown("""
     <style>
         div[data-baseweb="tab-border"][role="presentation"] {
-            border: 2px solid #F1D89E; /* Exemple de style */
-            background-color: #f1f1f1;
+            border: 1px solid #16425B; 
             border-radius: 5px;
             margin: 10px;
+        }
+        div[data-baseweb="tab-highlight"] {
+            background-color: #CBA325; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            height: 4px; 
+        }
+            
+        .stSidebar .stHeading h2 {
+            color: #16425B; /* Couleur du texte */
+            font-size: 120px; /* Taille de la police */
+            font-weight: 700; /* Poids de la police */
+            margin-top: -30px; /* Espace au-dessus */
+            margin-bottom: 20px; /* Espace en dessous */
+            text-align: center; /* Centrer le texte */
+            background-color: #'rgba(241, 216, 122)'; /* Couleur de fond si nécessaire */
+            padding: 10px 15px; /* Ajouter du padding pour l'espacement */
+            border-radius: 8px; /* Arrondir les coins */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajouter une ombre */
         }
     </style>
 """, unsafe_allow_html=True)
