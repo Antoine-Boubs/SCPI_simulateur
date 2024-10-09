@@ -188,27 +188,26 @@ st.markdown("""
             
     [role="slider"] {
         background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
+        width: 12px;
         height: 12px;
-        border: 2px solid #CBA325;
+        border: 1px solid #16425B;
     }
 
     [data-baseweb="slider"] > div:first-of-type > div:first-child {
         background-color: #8DB3C5 !important; /* après le curseur */
         height: 6px; 
-    }     
+    }   
+
+    input[type="number"] {
+        color: #202021 ;
+        border: 0.5px solid #8DB3C5;
+        background-color: rgba(141, 179, 197, 0.2);
+        border-radius: none !important;
+        padding: 5px 10px !important;
+        font-size: 14px !important;
+        font-weight: 500;
+    }  
             
-    button[kind="primary"] {
-        background-color: #8DB3C5;
-        border: 2px solid #CBA325;
-        color: #16425B;
-        border-radius: 8px;
-        padding: 10px 20px;
-        font-weight: bold;
-    }
-    button[kind="primary"]:hover {
-        background-color: #16425B;
-        color: #FFFFFF;
-    }
     </style>
 """, unsafe_allow_html=True)
 
