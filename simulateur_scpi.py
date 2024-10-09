@@ -15,21 +15,22 @@ st.set_page_config(
     initial_sidebar_state="expanded", 
 )
 
+with open("assets/style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 # MAIN APP
 st.markdown("""
     <style>
     [data-testid="stSidebar"] > div:first-child {
-        background: #DCF3EA; /* Couleur de fond */
-        border-radius: 12px; /* Arrondi des coins */
+        background: #DCF3EA; 
+        border-radius: 15px; 
         border-right: 2px solid #10505B;
         border-bottom: 2px solid #10505B;
         border-top: 2px solid #10505B;
         box-shadow: 
-            -10px 0 20px rgba(22, 66, 91, 0.1), /* Ombre plus prononcée vers la gauche */
+            0 8px 16px rgba(22, 66, 91, 0.2),  /* Ombre douce et plus large */
             0 16px 32px rgba(22, 66, 91, 0.2), /* Ombre plus intense */
             0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
-        padding: 10px; /* Ajouter un padding pour un style plus espacé */
-        padding-top: 10px;
     }
             
     div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label StSlider */
