@@ -171,9 +171,13 @@ st.markdown("""
         padding: 15px;
         margin-top: 10px;
         margin-bottom: 10px;
-        font-color: #8DB3C5
     }
 
+    div[data-testid="stSlider"] label {
+        font-size: 24px;
+        color: #CBA328;
+        font-weight: bold;
+}
     </style>
 """, unsafe_allow_html=True)
 
