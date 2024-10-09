@@ -45,16 +45,16 @@ st.markdown("""
         }
             
         .stSidebar .stHeading h2 {
-            color: #16425B; /* Couleur du texte */
-            font-size: 20px; /* Taille de la police */
-            font-weight: 700; /* Poids de la police */
+            color: #16425B; 
+            font-size: 20px; 
+            font-weight: 700; 
             margin-top: -30px; /* Espace au-dessus */
             margin-bottom: 20px; /* Espace en dessous */
-            text-align: center; /* Centrer le texte */
-            background-color: #'rgba(241, 216, 122)'; /* Couleur de fond si nécessaire */
+            text-align: center; 
+            background-color: #'rgba(241, 216, 122)'; 
             padding: 10px 15px; /* Ajouter du padding pour l'espacement */
-            border-radius: 8px; /* Arrondir les coins */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajouter une ombre */
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
         }
     </style>
 """, unsafe_allow_html=True)
@@ -411,96 +411,50 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
     point_sortie = df_investissement[df_investissement['Difference'] >= 0].head(1)
     annee_sortie = point_sortie['Année'].values[0] if not point_sortie.empty else None
 
-
-    # Créer les boutons radio
-    _, col, _ = st.columns([1,2,1])
-    with col:
-        option = st.radio(
-            label="",
-            options=('Avant', 'Après'),
-            key="graph_option",
-            horizontal=True
-        )
-
-    # Créer la figure en fonction de l'option sélectionnée
+    # Créer la figure pour la période "avant"
     fig = go.Figure()
 
-    if option == 'Avant':
-        duree_max = duree_pret // 12
-        x_range = np.arange(1, duree_max + 1)
-        
-        fig.add_trace(go.Scatter(
-            x=x_range, 
-            y=df_amortissement_annuel['Capital Restant'][:duree_max], 
-            mode='lines+markers', 
-            name='Capital Restant', 
-            line=dict(color=couleur_capital_restant, width=3), 
-            marker=dict(size=6, color='white', line=dict(color=couleur_capital_restant, width=2)),
-            hovertemplate='<span style="color:' + couleur_capital_restant + ';">●</span> Capital Restant <br>Montant: <b>%{y:.0f} €</b><extra></extra>',
-            fill='tozeroy',
-            fillcolor="#E8B0AA"
-        ))
-        fig.add_trace(go.Scatter(
-            x=x_range, 
-            y=df_investissement['Valeur de Revente'][:duree_max], 
-            mode='lines+markers', 
-            name='Valeur de Revente', 
-            line=dict(dash='dash', color=couleur_valeur_revente, width=3), 
-            marker=dict(size=6, color='white', line=dict(color=couleur_valeur_revente, width=2)),
-            hovertemplate='<span style="color:' + couleur_valeur_revente + ';">●</span> Valeur de Revente <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
-        ))
-        fig.add_trace(go.Scatter(
-            x=x_range, 
-            y=df_investissement['Effort Net Cumulé'][:duree_max], 
-            mode='lines+markers', 
-            name='Effort Net Cumulé', 
-            line=dict(color=couleur_effort_annuel, width=3), 
-            marker=dict(size=6, color='white', line=dict(color=couleur_effort_annuel, width=2)),
-            hovertemplate='<span style="color:' + couleur_effort_annuel + ';">●</span> Effort Net Cumulé <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
-        ))
-        
-        fig.update_layout(
-            xaxis=dict(range=[1, duree_max]),
-            yaxis=dict(range=[0, max(df_amortissement_annuel['Capital Restant'].max(), df_investissement['Valeur de Revente'].max()) + 20000])
-        )
-    else:
-        x_range = np.arange(duree_pret // 12 + 1, 51)
-        
-        fig.add_trace(go.Scatter(
-            x=x_range, 
-            y=df_amortissement_annuel['Capital Restant'][duree_pret // 12:50], 
-            mode='lines+markers', 
-            name='Capital Restant', 
-            line=dict(color=couleur_capital_restant, width=3), 
-            marker=dict(size=6, color='white', line=dict(color=couleur_capital_restant, width=2)),
-            hovertemplate='<span style="color:' + couleur_capital_restant + ';">●</span> Capital Restant <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
-        ))
-        fig.add_trace(go.Scatter(
-            x=x_range, 
-            y=df_investissement['Valeur de Revente'][duree_pret // 12:50], 
-            mode='lines+markers', 
-            name='Valeur de Revente', 
-            line=dict(dash='dash', color=couleur_valeur_revente, width=3), 
-            marker=dict(size=6, color='white', line=dict(color=couleur_valeur_revente, width=2)),
-            hovertemplate='<span style="color:' + couleur_valeur_revente + ';">●</span> Valeur de Revente <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
-        ))
-        fig.add_trace(go.Scatter(
-            x=x_range, 
-            y=df_investissement['Effort Net Cumulé'][duree_pret // 12:50], 
-            mode='lines+markers', 
-            name='Effort Net Cumulé', 
-            line=dict(color=couleur_effort_annuel, width=3), 
-            marker=dict(size=6, color='white', line=dict(color=couleur_effort_annuel, width=2)),
-            hovertemplate='<span style="color:' + couleur_effort_annuel + ';">●</span> Effort Net Cumulé <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
-        ))
-        
-        fig.update_layout(
-            xaxis=dict(range=[duree_pret // 12 + 1, 50]),
-            yaxis=dict(range=[0, max(df_amortissement_annuel['Capital Restant'].max(), df_investissement['Valeur de Revente'].max()) + 20000])
-        )
+    duree_max = duree_pret // 12
+    x_range = np.arange(1, duree_max + 1)
 
+    fig.add_trace(go.Scatter(
+        x=x_range, 
+        y=df_amortissement_annuel['Capital Restant'][:duree_max], 
+        mode='lines+markers', 
+        name='Capital Restant', 
+        line=dict(color=couleur_capital_restant, width=3), 
+        marker=dict(size=6, color='white', line=dict(color=couleur_capital_restant, width=2)),
+        hovertemplate='<span style="color:' + couleur_capital_restant + ';">●</span> Capital Restant <br>Montant: <b>%{y:.0f} €</b><extra></extra>',
+        fill='tozeroy',
+        fillcolor="#E8B0AA"
+    ))
+    fig.add_trace(go.Scatter(
+        x=x_range, 
+        y=df_investissement['Valeur de Revente'][:duree_max], 
+        mode='lines+markers', 
+        name='Valeur de Revente', 
+        line=dict(dash='dash', color=couleur_valeur_revente, width=3), 
+        marker=dict(size=6, color='white', line=dict(color=couleur_valeur_revente, width=2)),
+        hovertemplate='<span style="color:' + couleur_valeur_revente + ';">●</span> Valeur de Revente <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
+    ))
+    fig.add_trace(go.Scatter(
+        x=x_range, 
+        y=df_investissement['Effort Net Cumulé'][:duree_max], 
+        mode='lines+markers', 
+        name='Effort Net Cumulé', 
+        line=dict(color=couleur_effort_annuel, width=3), 
+        marker=dict(size=6, color='white', line=dict(color=couleur_effort_annuel, width=2)),
+        hovertemplate='<span style="color:' + couleur_effort_annuel + ';">●</span> Effort Net Cumulé <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
+    ))
+
+    # Ajustement des limites des axes
+    fig.update_layout(
+        xaxis=dict(range=[1, duree_max]),
+        yaxis=dict(range=[0, max(df_amortissement_annuel['Capital Restant'].max(), df_investissement['Valeur de Revente'].max()) + 20000])
+    )
+
+    # Ajouter la ligne et le point de sortie s'il y a un point de sortie
     if annee_sortie:
-        # Ligne verticale pour le point de sortie
         fig.add_shape(
             type="line",
             x0=annee_sortie,
@@ -512,7 +466,6 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             line=dict(color=couleur_point_sortie, width=3, dash="solid")
         )
         
-        # Point de sortie
         fig.add_trace(go.Scatter(
             x=[annee_sortie],
             y=[df_investissement.loc[df_investissement['Année'] == annee_sortie, 'Valeur de Revente'].values[0]],
@@ -521,8 +474,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             name='Point de sortie',
             hoverinfo='skip'
         ))
-        
-        # Annotation pour le point de sortie (ajustée avec survol)
+
         fig.add_annotation(
             x=annee_sortie,
             y=df_investissement.loc[df_investissement['Année'] == annee_sortie, 'Valeur de Revente'].values[0],
@@ -539,22 +491,16 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             bordercolor=couleur_point_sortie,
             borderwidth=2,
             borderpad=4,
-            opacity=0.8,
-            hovertext=f"À l'année {annee_sortie}, la valeur de revente dépasse le coût total de l'investissement.<br>Vous pouvez revendre sans perte.",
-            hoverlabel=dict(
-                bgcolor="#FBFBFB",
-                font_size=14,
-                font_family="Inter"
-            )
+            opacity=0.8
         )
 
+    # Mettre à jour la mise en page
     fig.update_layout(
         title=dict(
             text='<b>La vie de votre investissement</b>',
             font=dict(family="Inter", size=24, color="#16425B"),
             x=0.5,
-            xanchor='center',
-            y=1,
+            xanchor='center'
         ),
         xaxis=dict(
             title="<b>Années</b>",
@@ -604,7 +550,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
 
     # Afficher le graphique
     st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
-    return option
+
 
 
 def main():    
