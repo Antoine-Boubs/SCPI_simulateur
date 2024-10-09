@@ -435,6 +435,19 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             line=dict(color=couleur_point_sortie, width=2, dash="dash")
         )
 
+        # Ajouter l'annotation pour la ligne verticale
+        fig.add_annotation(
+            x=annee_sortie,
+            y=max(df_amortissement_annuel['Capital Restant'].max(), df_investissement['Valeur de Revente'].max()) + 20000,
+            text="Sortie Neutre",
+            showarrow=False,
+            font=dict(size=12, color=couleur_point_sortie),
+            bgcolor="rgba(251, 251, 251, 0.8)",
+            bordercolor=couleur_point_sortie,
+            borderwidth=1,
+            borderpad=4
+        )
+
     # Mettre à jour la mise en page
     fig.update_layout(
         title=dict(
@@ -480,7 +493,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             x=0.5,
             bgcolor='rgba(0,0,0,0)',
             traceorder="normal",
-            font=dict(size=10),
+            font=dict(size=12),
             itemsizing="constant",
             itemwidth=40,
         )
