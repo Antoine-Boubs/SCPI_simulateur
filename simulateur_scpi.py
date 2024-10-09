@@ -116,6 +116,8 @@ st.markdown("""
         margin-top: 10px;
     }
 
+            
+
     [data-testid="stSidebar"] > div:first-child {
         background: #DCF3EA; 
         border-radius: 15px; 
@@ -127,14 +129,16 @@ st.markdown("""
             0 16px 32px rgba(22, 66, 91, 0.2), /* Ombre plus intense */
             0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
     }
+
             
-    div[data-testid="stSlider"], div[data-testid="stNumberInput"] {
-        background-color: #FBFBFB;
-        border: 2px solid #CBA328;
-        border-radius: 10px;
-        padding: 15px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+                
+    div[data-testid="stMetric"] {
+        transition: transform 0.3s ease; /* Transition douce */
+    }
+
+    div[data-testid="stMetric"]:hover {
+        transform: scale(1.05); /* Zoom de 5% */
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Optionnel : ajouter une ombre pour accentuer l'effet */
     }
     </style>
 """, unsafe_allow_html=True)
