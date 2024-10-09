@@ -130,39 +130,34 @@ st.markdown("""
             0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
     }
 
-            
-    div[data-testid="stMetric"] label[data-testid="stMetricLabel"] {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-    }    
-            
-    div[data-testid="stMetric"] div[data-testid="stMetricValue"] {
-        text-align: center;
-        font-size: 40px !important;
-        font-weight: 600 !important;
-        color: #16425B;
-    }
-            
-    div[data-testid="stMetric"] {
+    div[data-testid="stSelectbox"]{     
         background-color: #FBFBFB;
-        border: 3px solid #CBA325;
-        box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);
+        border: 2px solid #16425B;
         border-radius: 15px;
-        padding: 10px;
-    }      
-
-    div[data-testid="stMetric"] {
-        transition: transform 0.5s ease; /* Transition douce */
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
     }
 
     div[data-testid="stMetric"]:hover {
         transform: scale(1.05); /* Zoom de 5% */
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5); /* Optionnel : ajouter une ombre pour accentuer l'effet */
     }
-            
 
+    div[data-testid="stSelectbox"] p {  
+        text-align: center;
+        font-size: 40px !important;
+        font-weight: 600 !important;
+        color: #16425B;
+    }   
+    
+    div[data-testid="stSelectbox"] label { 
+    text-align: center;
+        font-size: 40px !important;
+        font-weight: 600 !important;
+        color: #D56844;
+    }   
 
     div[data-testid="stSlider"], div[data-testid="stNumberInput"], div[data-testid="stCheckbox"], div[data-testid="stSelectbox"]{
         background-color: #FBFBFB;
@@ -181,7 +176,7 @@ st.markdown("""
     div[data-testid="stSlider"] p, div[data-testid="stNumberInput"] p, div[data-testid="stCheckbox"] p, div[data-testid="stSelectbox"] p {
         font-size: 14px;
         color: #202021;
-        font-weight: 600;
+        font-weight: 400;
     }
     </style>
 """, unsafe_allow_html=True)
