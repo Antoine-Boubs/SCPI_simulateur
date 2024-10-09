@@ -48,7 +48,10 @@ def input_simulateur():
         
         with st.container():
             frais_courtage = st.number_input("💵 Frais courtage / dossier (€)", 0, 10000, 2250, 250)
-            inclus_financement = st.checkbox("Inclus dans le financement ?", help='Les frais de dossiers / courtage sont-ils inclus dans votre financement ?')
+            if frais_courtage > 0:
+                inclus_financement = st.checkbox("Inclus dans le financement ?", help='Les frais de dossiers / courtage sont-ils inclus dans votre financement ?')
+            else:
+                inclus_financement = False
         
         with st.container():
             rendement_souhaite = st.slider("📈 Rendement locatif (%)", 1.0, 10.0, 5.0, 0.1) / 100
@@ -295,7 +298,7 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
 
     fig.update_layout(
         title=dict(
-            text='<b>Évolution des revenus nets (Français vs Étranger)</b>',
+            text='<b>Vos revenus nets (Français vs Étranger)</b>',
             font=dict(family="Inter", size=24, color="#16425B"),
             x=0.5,
             xanchor='center'
