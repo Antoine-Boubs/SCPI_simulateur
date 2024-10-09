@@ -38,12 +38,14 @@ st.markdown("""
         justify-content: center;
         text-align: left;
         width: 100%;
-        font-size: 13px !important;
         font-weight: 900 !important;
-        color: #F0D97A !important; /* Couleur rose */
         margin-bottom: 0px;
     }
+    div[data-testid="stSlider"] p {
+    color: #E8B0AA !important;
+    font-size: 23px !important;
 
+}
 
     /* Couleur du texte pour les labels des champs de saisie numérique */
     div[data-testid="stNumberInput"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p {
