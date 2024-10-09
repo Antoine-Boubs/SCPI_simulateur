@@ -627,11 +627,11 @@ def main():
             """
             <style>
             .custom-box {
-                background-color: rgba(141, 179, 197, 0.3); /* Couleur de fond rose clair */
-                color: #16425B; /* Couleur du texte */
-                padding: 15px; /* Espacement interne */
-                border-radius: 15px; /* Coins arrondis */
-                margin-bottom: 20px; /* Espace en dessous */
+                background-color: rgba(232, 176, 170, 0.5); 
+                color: #202021;
+                padding: 20px; 
+                border-radius: 15px; 
+                margin-bottom: 20px; 
                 box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);
             }
             </style>
