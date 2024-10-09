@@ -17,19 +17,13 @@ st.set_page_config(
 
 # MAIN APP
 st.markdown("""
+           /* StSidebar */ 
     <style>
     [data-testid="stSidebar"] > div:first-child {
-        background: #FBFBFB;
-        border-radius: 20px
-        box-shadow: 
-            0 4px 8px rgba(141, 179, 197, 0.2), /* Couleur #8DB3C5 avec opacité 0.2 */
-            0 8px 16px rgba(22, 66, 91, 0.2),  /* Couleur #16425B avec opacité 0.2 */
-            0 16px 32px rgba(141, 179, 197, 0.3), /* Couleur #8DB3C5 avec opacité 0.3 */
-            0 32px 64px rgba(22, 66, 91, 0.3); /* Couleur #16425B avec opacité 0.3 */
+        background: #DCF3EA;
     }
             
-    /* StSlider */
-
+            /* StSlider */
     div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label StSlider */
         display: flex;
         justify-content: center;
@@ -44,21 +38,31 @@ st.markdown("""
     div[data-testid="stSlider"] {
         background-color: #FBFBFB;
         border: 2px solid #CBA325;
-        box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);
+        box-shadow: box-shadow: 
+            0 4px 8px rgba(141, 179, 197, 0.2), /* Couleur #8DB3C5 avec opacité 0.2 */
+            0 8px 16px rgba(22, 66, 91, 0.2),  /* Couleur #16425B avec opacité 0.2 */
+            0 16px 32px rgba(141, 179, 197, 0.3), /* Couleur #8DB3C5 avec opacité 0.3 */
+            0 32px 64px rgba(22, 66, 91, 0.3); /* Couleur #16425B avec opacité 0.3 */;
         border-radius: 10px;
         padding: 15px;
         margin-top: 10px;
         margin-bottom: 10px;
     }
-                        
-    /* Style for the slider thumb */
-    div[data-testid="stSlider"] div[data-baseweb="slider"] div[role="slider"] {
-        background-color: #8DB3C5;
-        border: 2px solid #16425B;
+            
+    [role="slider"] {
+        background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
+        height: 12px;
+        border: 2px solid #D56844;
     }
 
+    [data-baseweb="slider"] > div:first-of-type > div:first-child {
+        background-color: #8DB3C5 !important; /* après le curseur */
+        height: 6px; /* Ajuste la hauteur si nécessaire */
+    }     
 
 
+
+            
     /* StNumberInput */
     div[data-testid="stNumberInput"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label stNumberInput */
         display: flex;
@@ -100,15 +104,7 @@ st.markdown("""
     }
             
 
-    [role="slider"] {
-    background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
-    height: 12px;
-    }
-
-    [data-baseweb="slider"] > div:first-of-type > div:first-child {
-    background-color: #8DB3C5 !important; /* après le curseur */
-    height: 6px; /* Ajuste la hauteur si nécessaire */
-    }       
+      
 
     
        
