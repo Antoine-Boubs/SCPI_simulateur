@@ -223,7 +223,7 @@ st.markdown("""
         font-size: 16px;
         font-weight: 500;
         color: #202021;
-        margin: 0 0 0 20px;
+        margin: 0 0 0 10px;
     } 
     </style>
 """, unsafe_allow_html=True)
