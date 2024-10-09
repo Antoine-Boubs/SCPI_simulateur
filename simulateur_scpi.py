@@ -121,7 +121,7 @@ st.markdown("""
     [data-testid="stSidebar"] > div:first-child {
         background-color: rgba(141, 179, 197, 0.2);
         margin-left: 20px;
-        margin-bottom: -40px;
+        margin-top: 20px;
         border-radius: 15px; 
         border: 2px solid #16425B;
         box-shadow: 
