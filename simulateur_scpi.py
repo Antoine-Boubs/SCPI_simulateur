@@ -168,7 +168,6 @@ st.markdown("""
 
     div[data-testid="stSlider"], div[data-testid="stNumberInput"], div[data-testid="stCheckbox"], div[data-testid="stSelectbox"]{
         background-color: #FBFBFB;
-        border: 2px solid #CBA328;
         border-radius: 10px;
         padding: 15px;
         margin-top: 10px;
@@ -235,7 +234,7 @@ st.markdown("""
     }
     div[role="radiogroup"] label div p {
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 500;
         color: #202021;
         margin: 0 0 0 10px;
     } 
