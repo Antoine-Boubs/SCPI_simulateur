@@ -218,7 +218,7 @@ st.markdown("""
         padding: 10px 15px;
         margin: 0 5px;
         border-radius: 15px;
-        transition: border-color 0.3s, color 0.3s;
+        transition: border-color 0.3s;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -236,6 +236,7 @@ st.markdown("""
     div[role="radiogroup"] label div p {
         font-size: 16px;
         font-weight: 600;
+        color: #202021;
         margin: 0 0 0 10px;
     } 
     </style>
