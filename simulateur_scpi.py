@@ -578,59 +578,62 @@ def main():
         loyer_net_apres_pret = loyer_apres_pret - impot_apres_pret
         rendement_net = (loyer_net_apres_pret / effort_net_total) * 100
 
-        # CSS pour les cartes
+        # CSS personnalisé pour les cartes
         st.markdown("""
             <style>
-            .custom-card-1 .stMetric {
-                background-color: #F1D89E;
-                border-color: #16425B;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            .custom-card {
+                background-color: #F1F1F1;
+                border: 1px solid #16425B;
                 border-radius: 10px;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             }
-
-            .custom-card-2 .stMetric {
-                background-color: #E8B0AA;
-                border-color: #D56844;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                border-radius: 10px;
+            .custom-card h2 {
+                font-size: 20px;
+                color: #CBA325;
             }
-
-            .custom-card-3 .stMetric {
-                background-color: #AFC6DC;
-                border-color: #CBA325;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                border-radius: 10px;
-            }
-
-            .custom-card-4 .stMetric {
-                background-color: #E8FEE8;
-                border-color: #10505B;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                border-radius: 10px;
+            .custom-card p {
+                font-size: 30px;
+                font-weight: bold;
+                color: #16425B;
+                margin: 0;
             }
             </style>
         """, unsafe_allow_html=True)
 
-        # Afficher les métriques avec les styles personnalisés
+        # Afficher les cartes en utilisant du HTML
         with col1:
-            st.markdown('<div class="custom-card-1">', unsafe_allow_html=True)
-            st.metric(label="Loyer Mensuel", value=f"{revenu_mensuel:.0f}€")
-            st.markdown('</div>', unsafe_allow_html=True)
+            st.markdown(f"""
+            <div class="custom-card">
+                <h2>Loyer Mensuel</h2>
+                <p>{revenu_mensuel:.0f}€</p>
+            </div>
+            """, unsafe_allow_html=True)
 
         with col2:
-            st.markdown('<div class="custom-card-2">', unsafe_allow_html=True)
-            st.metric(label="Effort Mensuel", value=f"{effort_mensuel_moyen:.0f}€", help='Apport non inclus dans le calcul')
-            st.markdown('</div>', unsafe_allow_html=True)
+            st.markdown(f"""
+            <div class="custom-card">
+                <h2>Effort Mensuel</h2>
+                <p>{effort_mensuel_moyen:.0f}€</p>
+            </div>
+            """, unsafe_allow_html=True)
 
         with col3:
-            st.markdown('<div class="custom-card-3">', unsafe_allow_html=True)
-            st.metric(label="Rendement Brut", value=f"{rendement_brut:.2f}%")
-            st.markdown('</div>', unsafe_allow_html=True)
+            st.markdown(f"""
+            <div class="custom-card">
+                <h2>Rendement Brut</h2>
+                <p>{rendement_brut:.2f}%</p>
+            </div>
+            """, unsafe_allow_html=True)
 
         with col4:
-            st.markdown('<div class="custom-card-4">', unsafe_allow_html=True)
-            st.metric(label="Rendement Net", value=f"{rendement_net:.2f}%")
-            st.markdown('</div>', unsafe_allow_html=True)
+            st.markdown(f"""
+            <div class="custom-card">
+                <h2>Rendement Net</h2>
+                <p>{rendement_net:.2f}%</p>
+            </div>
+            """, unsafe_allow_html=True)
 
 
 
