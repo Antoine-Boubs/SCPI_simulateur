@@ -215,26 +215,15 @@ st.markdown("""
         margin-top: 10px;
         background-color: rgba(141, 179, 197, 0.2);
         padding: 10px 15px;
-        margin: 0 5px;
         border-radius: 15px;
-        transition: all 0.3s;
-        display: flex;
-        align-items: center;
-        min-width: 100px;
+        min-width: 100%;
     }
-
-    div[role="radiogroup"] label:hover {
-        border: 2px solid #16425b;
-    }  
-    div[role="radiogroup"] label div {
-        display: flex;
-        align-items: center;
-    }
+    
     div[role="radiogroup"] label div p {
         font-size: 16px;
         font-weight: 500;
         color: #202021;
-        margin: 0 0 0 10px;
+        margin: 0 0 0 20px;
     } 
     </style>
 """, unsafe_allow_html=True)
