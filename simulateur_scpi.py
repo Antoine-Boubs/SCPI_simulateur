@@ -46,7 +46,7 @@ st.markdown("""
     }
             
     div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p {
-    color: #284264 !important; /* Couleur rose par exemple */
+    color: #E8B0AA !important; /* Couleur rose par exemple */
     }
 
     /* Couleur du texte pour les labels des champs de saisie numérique */
