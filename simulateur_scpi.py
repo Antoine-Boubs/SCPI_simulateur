@@ -95,6 +95,19 @@ st.markdown("""
             border-radius: 10px; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+            
+        .stMarkdown .stHeading h2 {
+            color: #16425B; 
+            font-size: 20px; 
+            font-weight: 700; 
+            margin-top: -30px; /* Espace au-dessus */
+            margin-bottom: 20px; /* Espace en dessous */
+            text-align: center; 
+            background-color: #'rgba(241, 216, 122)'; 
+            padding: 10px 15px; /* Ajouter du padding pour l'espacement */
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -373,7 +386,7 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
 
     # Mettre à jour la mise en page du graphique
     fig.update_layout(
-        title=dict(
+        title=None(
             text='<b>Vos revenus nets (Français vs Étranger)</b>',
             font=dict(family="Inter", size=24, color="#16425B"),
             x=0.5,
@@ -650,6 +663,7 @@ def main():
             unsafe_allow_html=True
         )
 
+        st.markdown("<h2 style='text-align: center; color: #16425B;'>Vos revenus nets (Français vs Étranger)</h2>", unsafe_allow_html=True)
         plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
 
         graphique_loyers_francais_vs_etrangers(df_investissement)
