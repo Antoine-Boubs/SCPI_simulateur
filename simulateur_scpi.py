@@ -158,7 +158,7 @@ st.markdown("""
         color: #16425B;
     }
     
-    div[data-testid="stMetric"]  { 
+    div[data-testid="stMetric"] label { 
         text-align: center;
         display: flex;
         justify-content: center;
