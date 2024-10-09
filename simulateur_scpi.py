@@ -30,6 +30,17 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+    <style>
+        div[data-baseweb="tab-border"][role="presentation"] {
+            border: 2px solid #F1D89E; /* Exemple de style */
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 
 def input_simulateur():
     with st.sidebar:
@@ -564,9 +575,10 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             yanchor="middle",
             y=0.5,
             xanchor="right",
-            x=1.1,
-            bgcolor='rgba(255,255,255,0.8)',
+            x=1.2,
+            bgcolor="#8DB3C5",
             traceorder="normal",
+            itemspacing=10,
             font=dict(size=10),
             itemsizing="constant",
             itemwidth=40,
