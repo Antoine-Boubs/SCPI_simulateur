@@ -126,7 +126,7 @@ def input_simulateur():
             delai_jouissance = st.slider("🕒 Délai de jouissance (mois)", 0, 12, 6)
             taux_revalorisation = st.slider("📊 Taux de revalorisation (%)", 0.0, 5.0, 1.0, 0.1) / 100
             frais_souscription = st.slider("💸 Frais de souscription (%)", 0.0, 20.0, 12.0, 0.5) / 100
-            taux_imposition = st.select_slider("🚥 Taux d'imposition (TMI)",options=[0, 11, 30, 41, 45],value=30)
+            taux_imposition = st.select_slider("🚥 Taux d'imposition (TMI)",options=[0, 11, 30, 41, 45],value=30)/100
         
         with st.container():
             investissement_etranger = st.checkbox("Investissement en SCPI étrangères ?")
@@ -303,7 +303,8 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
     couleur_francais_aire = 'rgba(141, 179, 197, 0.3)' 
     couleur_etranger = '#CBA325' 
     couleur_etranger_aire = 'rgba(241, 216, 122, 0.5)'
-    couleur_somme = '#FF5733'  # Couleur pour la somme des loyers
+    couleur_somme = '#10505B'  # Couleur pour la somme des loyers
+    couleur_somme_aire = 'rgba(220, 243, 234, 0.5)'  # Couleur pour l'aire
 
     # Calculer la différence et sa valeur absolue
     df_investissement['Différence'] = df_investissement['Loyer Net Français'] - df_investissement['Loyer Net Étranger']
@@ -344,48 +345,27 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
         y=df_investissement['Somme Loyers'],
         name='Somme des Loyers',
         mode='lines',
-        line=dict(color=couleur_somme, width=2, dash='dash'),  # Ligne en pointillés
+        line=dict(color=couleur_somme, width=2),
+        fill='tozeroy',
+        fillcolor=couleur_somme_aire,
         hovertemplate='<span style="color:' + couleur_somme + ';">●</span> Somme des Loyers <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
-    ))
-
-    # Différence (valeur absolue) avec changement de couleur
-    for i in range(len(df_investissement) - 1):
-        color = couleur_francais if df_investissement['Différence'].iloc[i] >= 0 else couleur_etranger
-        fig.add_trace(go.Scatter(
-            x=df_investissement['Année'].iloc[i:i+2],
-            y=df_investissement['Différence_Abs'].iloc[i:i+2],
-            mode='lines',
-            line=dict(color=color, width=2),
-            showlegend=False,
-            hoverinfo='skip'
-        ))
-
-    # Ajouter une trace invisible pour la légende et le hover
-    fig.add_trace(go.Scatter(
-        x=df_investissement['Année'],
-        y=df_investissement['Différence_Abs'],
-        name='Différence',
-        mode='lines',
-        line=dict(color='rgba(0,0,0,0)'),
-        hovertemplate='<span style="color:green;">●</span> Différence <br>' +
-                    '%{text}: <b>%{y:.0f} €</b><extra></extra>',
-        text=[f'Français > Étranger' if d >= 0 else 'Étranger > Français' for d in df_investissement['Différence']]
     ))
 
     # Calculer le maximum pour l'axe y et arrondir au multiple de 1000 supérieur
     y_max = max(df_investissement['Loyer Net Français'].max(),
                 df_investissement['Loyer Net Étranger'].max(),
-                df_investissement['Somme Loyers'].max(),
-                df_investissement['Différence_Abs'].max())
+                df_investissement['Somme Loyers'].max())
     y_max_rounded = np.ceil(y_max / 1000) * 1000
 
-    # Mise en forme du graphique
+    # Mettre à jour la mise en page du graphique
     fig.update_layout(
         title=dict(
             text='<b>Vos revenus nets (Français vs Étranger)</b>',
             font=dict(family="Inter", size=24, color="#16425B"),
             x=0.5,
-            xanchor='center'
+            xanchor='center',
+            y=0.95,
+            yanchor='top',
         ),
         xaxis=dict(
             title="<b>Années</b>",
@@ -414,18 +394,18 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
             range=[0, y_max_rounded]
         ),
         font=dict(family="Inter", size=14),
-        height=600,
+        height=500,
         width=1000,
         margin=dict(t=100, b=60, l=60, r=60),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         legend=dict(
             orientation="h",
-            yanchor="bottom",
-            y=1.02,
+            yanchor="top",
+            y=1.15,
             xanchor="center",
             x=0.5,
-            bgcolor='rgba(255, 255, 255, 0.5)',  # Fond transparent pour la légende
+            bgcolor='rgba(0,0,0,0)',
             traceorder="normal",
             font=dict(size=12),
             itemsizing="constant",
@@ -434,8 +414,9 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
         hovermode="x unified",
     )
 
-    # Afficher le graphique avec des paramètres supplémentaires
+    # Afficher le graphique
     st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
+
 
 
 def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
