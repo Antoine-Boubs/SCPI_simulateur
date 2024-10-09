@@ -54,7 +54,11 @@ st.markdown("""
             background-color: #'rgba(241, 216, 122)'; 
             padding: 10px 15px; /* Ajouter du padding pour l'espacement */
             border-radius: 10px; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        st.metric(label="Loyer Mensuel", value=f"{revenu_mensuel:.0f}€") {
+            background: #8DB3C5
         }
     </style>
 """, unsafe_allow_html=True)
