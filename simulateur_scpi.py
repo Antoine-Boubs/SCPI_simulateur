@@ -22,54 +22,47 @@ st.markdown(f"""
 <div class="title-container">
     <h1 class="main-title">Simulateur SCPI</h1>
     <p class="subtitle">Investissez dans de l'immobilier professionnel à partir de 50 000€</p>
-    <div class="info-container">
-        <div class="update-info">Dernière mise à jour : {date.today().strftime('%d/%m/%Y')}</div>
-        <div class="author-info">Par Antoine Berjoan</div>
-    </div>
+    <div class="update-info">Dernière mise à jour : {date.today().strftime('%d/%m/%Y')}</div>
+    <div class="author-info">Par Antoine Berjoan</div>
 </div>
 """, unsafe_allow_html=True)
 
-# MAIN APP
+# CSS
 st.markdown("""
     <style>
-   /* Styles pour le conteneur principal du titre */
-    .title-container {
-        text-align: center;
-        margin-bottom: 20px;
-        padding: 10px;
-        background-color: #FBFBFB;
-        border: 2px solid #CBA325;
-        border-radius: 10px;
+   .title-container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #CBA328;
+    border-radius: 10px;
+    margin: 20px 0;
+    position: relative; /* Ajoute du positionnement relatif pour les enfants */
     }
 
-    /* Style pour le titre principal */
-    .main-title {
-        font-size: 36px;
-        font-weight: 700;
-        color: #16425B;
-        margin: 0;
+    .info-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        width: 100%;
+        padding: 0 20px; /* Ajouter du padding pour espacer les côtés */
     }
 
-    /* Style pour le sous-titre */
-    .subtitle {
-        font-size: 18px;
-        font-weight: 400;
-        color: #8DB3C5;
-        margin: 5px 0;
-    }
-
-    /* Style pour les informations de mise à jour */
     .update-info {
         font-size: 14px;
+        color: #000000;
         font-style: italic;
-        color: #202021;
+        text-align: left; /* Alignement à gauche */
+        flex: 1;
     }
 
-    /* Style pour les informations sur l'auteur */
     .author-info {
         font-size: 14px;
-        color: #CBA325;
+        color: #CBA328;
+        text-align: right; /* Alignement à droite */
+        flex: 1;
     }
+
             
     [data-testid="stSidebar"] > div:first-child {
         background: #DCF3EA; 
