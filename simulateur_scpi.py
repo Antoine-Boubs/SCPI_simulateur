@@ -634,9 +634,9 @@ def main():
 
 
 
-            plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
+        plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
 
-            graphique_loyers_francais_vs_etrangers(df_investissement)
+        graphique_loyers_francais_vs_etrangers(df_investissement)
         
 
             
