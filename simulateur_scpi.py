@@ -31,7 +31,6 @@ st.markdown("""
             0 8px 16px rgba(22, 66, 91, 0.2),  /* Ombre douce et plus large */
             0 16px 32px rgba(22, 66, 91, 0.2), /* Ombre plus intense */
             0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
-        padding-top: 20px;
     }
             
     div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { 
@@ -41,13 +40,10 @@ st.markdown("""
         width: 100%;
         font-size: 13px !important;
         font-weight: 900 !important;
-        color:#202021;
+        color: #E8B0AA !important; /* Couleur rose */
         margin-bottom: 0px;
     }
-            
-    div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p {
-    color: #E8B0AA !important; /* Couleur rose par exemple */
-    }
+
 
     /* Couleur du texte pour les labels des champs de saisie numérique */
     div[data-testid="stNumberInput"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p {
