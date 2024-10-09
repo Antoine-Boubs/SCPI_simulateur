@@ -557,29 +557,49 @@ def main():
             st.metric("Rentabilité Nette", f"{rendement_net:.2f}%", help='Rentabilité de votre investissement : ce que vous percevez au terme / ce que vous avez investi (mensualités et impôts compris)')
 
         st.markdown(
-            """
-            <style>
-            .custom-box {
-                background: rgba(251, 233, 186, 0.4);                
-                color: #DF9F46;
-                font-weight: 500;
-                padding: 20px; 
-                border-radius: 15px;
-                margin-top: 20px; 
-                margin-bottom: 20px; 
-                box-shadow: 0 4px 10px rgba(251, 233, 186, 0.6);
-            }
-            </style>
-            <div class="custom-box">
-                L'investissement en SCPI a pour fonction première la <strong>distribution de revenus complémentaires</strong> à une échéance donnée. <strong>L'objectif n'est pas la revente</strong> à court, moyen ou moyen-long terme.
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+                    """
+                    <style>
+                    .custom-box-disclaimer {
+                        background: rgba(232, 176, 170, 0.3);                
+                        color: #A33432;
+                        font-weight: 500;
+                        padding: 20px; 
+                        border-radius: 15px;
+                        margin-top: -10px; 
+                        margin-bottom: 20px; 
+                        box-shadow: 0 4px 8px rgba(232, 176, 170, 0.3), 0 6px 20px rgba(232, 176, 170, 0.15);
+
+                    }
+                    </style>
+                    <div class="custom-box-disclaimer">
+                        <strong>Ce simulateur ne constitue pas un conseil en investissement.</strong> Le nerf de la guerre reste la sélection de vos SCPI ; ce sont elles qui détermineront le succès de votre investissement. Pour obtenir plus d'informations, recueillir un avis sur votre sélection ou votre situation vous pouvez me contacter.
+                    """,
+                    unsafe_allow_html=True
+                )
 
         
         plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
-
+        st.markdown(
+                    """
+                    <style>
+                    .custom-box {
+                        background: rgba(251, 233, 186, 0.4);                
+                        color: #DF9F46;
+                        font-weight: 500;
+                        padding: 20px; 
+                        border-radius: 15px;
+                        margin-top: -10px; 
+                        margin-bottom: 20px; 
+                        box-shadow: 0 4px 10px rgba(251, 233, 186, 0.6);
+                    }
+                    </style>
+                    <div class="custom-box">
+                        L'investissement en SCPI a pour fonction première la <strong>distribution de revenus complémentaires</strong> à une échéance donnée. <strong>L'objectif n'est pas la revente</strong> à court, moyen ou moyen-long terme.
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+        
         graphique_loyers_francais_vs_etrangers(df_investissement)
         st.markdown(
             """
@@ -590,13 +610,13 @@ def main():
                 font-weight: 500;
                 padding: 20px; 
                 border-radius: 15px;
-                margin-top: -10px; 
+                margin-top: 10px; 
                 margin-bottom: 20px; 
                 box-shadow: 0 4px 8px rgba(152, 153, 195, 0.3), 0 6px 20px rgba(152, 153, 195, 0.15);
             }
             </style>
             <div class="custom-box-revenus">
-                Ce sont vos revenus <strong>net de fiscalité.  <br>Les loyers français bénéficient de la déduction des intérêts d'emprunts</strong> pendant la période de financement.
+                Ce sont vos <strong>revenus nets de fiscalité.</strong> Les loyers français bénéficient de la déduction des intérêts d'emprunt pendant la période de financement, ce qui explique leur meilleure rentabilité nette initiale. <br>La courbe bi-color illustre quel type de SCPI paie le mieux. <strong>Lorsqu'il n'y a plus ou peu d'intérêts à déduire, la SCPI étrangère offre une rentabilité souvent plus avantageuse.</strong>
             </div>
             """,
             unsafe_allow_html=True

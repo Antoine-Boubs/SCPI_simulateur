@@ -126,12 +126,15 @@ p {
 
     div[data-testid="stMetric"] {
         background-color: #FBFBFB;
-        border: 2px solid #16425B;
         border-radius: 15px;
         padding: 15px;
         margin-top: 10px;
         margin-bottom: 10px;
         transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(152, 153, 195, 0.3), 0 6px 20px rgba(152, 153, 195, 0.15);
     }
 
     div[data-testid="stMetric"]:hover {
@@ -140,17 +143,9 @@ p {
     }
 
     div[data-testid="stMetric"] p {
-        font-size: 14px !important;
+        font-size: 15px !important;
         font-weight: 400 !important;
         color: #CBA325;
-    }
-
-    .stMetric label {
-        justify-content: right;
-    }
-
-    div[data-testid="stMetricLabel"] > div {
-        text-align: center;
     }
 
     div[data-testid="stMetricValue"] {
