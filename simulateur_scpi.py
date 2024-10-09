@@ -124,7 +124,22 @@ def input_simulateur():
             delai_jouissance = st.slider("🕒 Délai de jouissance (mois)", 0, 12, 6)
             taux_revalorisation = st.slider("📊 Taux de revalorisation (%)", 0.0, 5.0, 1.0, 0.1) / 100
             frais_souscription = st.slider("💸 Frais de souscription (%)", 0.0, 20.0, 12.0, 0.5) / 100
-            taux_imposition = st.selectbox("🧮 Tranche d'imposition (TMI)", [0, 11, 30, 41, 45]) / 100
+            
+            options_tmi = [0, 11, 30, 41, 45]
+
+            # Utiliser le slider pour choisir parmi les valeurs prédéfinies
+            taux_imposition = st.slider(
+                "🧮 Tranche d'imposition (TMI)",
+                min_value=min(options_tmi),
+                max_value=max(options_tmi),
+                value=min(options_tmi),
+                step=1,
+                format="%d%%",
+                help="Choisissez la tranche d'imposition parmi les valeurs disponibles : 0%, 11%, 30%, 41%, 45%",
+            )
+
+            # Limiter les choix du slider aux valeurs discrètes définies
+            taux_imposition = min(options_tmi, key=lambda x: abs(x - taux_imposition))
         
         with st.container():
             investissement_etranger = st.checkbox("Investissement en SCPI étrangères ?")
