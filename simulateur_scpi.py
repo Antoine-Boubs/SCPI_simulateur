@@ -136,8 +136,6 @@ st.markdown("""
         justify-content: center;
         text-align: center;
         width: 100%;
-        font-size: 14px !important;
-        font-weight: 900 !important;
     }    
             
     div[data-testid="stMetric"] div[data-testid="stMetricValue"] {
@@ -163,6 +161,18 @@ st.markdown("""
         transform: scale(1.05); /* Zoom de 5% */
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5); /* Optionnel : ajouter une ombre pour accentuer l'effet */
     }
+            
+
+
+    div[data-testid="stSlider"], div[data-testid="stNumberInput"] {
+        background-color: #FBFBFB;
+        border: 2px solid #CBA328;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
     </style>
 """, unsafe_allow_html=True)
 
