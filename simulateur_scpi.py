@@ -635,26 +635,8 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
             y=1.02,
             xanchor="center",
             x=0.5,
-            bgcolor='rgba(255,255,255,1)',
         ),
         hovermode="x unified",
-        # Ajout du cadre autour du graphique
-        shapes=[
-            dict(
-                type="rect",
-                xref="paper",
-                yref="paper",
-                x0=0,
-                y0=0,
-                x1=1,
-                y1=1,
-                line=dict(
-                    color="#16425B",
-                    width=2,
-                ),
-                fillcolor="rgba(0,0,0,0)"
-            ),
-        ]
     )
 
     # Afficher le graphique avec des paramètres supplémentaires
