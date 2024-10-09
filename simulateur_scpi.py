@@ -48,7 +48,7 @@ st.markdown("""
 
     /* Couleur du texte pour les labels des champs de saisie numérique */
     div[data-testid="stNumberInput"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p {
-        color: #ff4b5c !important; /* Couleur rose par exemple */
+        color: #D56844 !important; /* Couleur rose par exemple */
     }
 
     div[data-testid="stSlider"] {
