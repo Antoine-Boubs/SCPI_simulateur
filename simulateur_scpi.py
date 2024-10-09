@@ -36,9 +36,9 @@ st.markdown("""
     .title-container {
         text-align: center;
         padding: 30px;
-        border: 2px solid #CBA328; /* Couleur de la bordure */
+        border: 3px solid #16425B; 
         border-radius: 15px;
-        background-color: #F1D89E; /* Couleur de fond */
+        background-color: #FBFBFB; 
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre */
         margin: -10px auto;
         position: relative;
@@ -115,7 +115,7 @@ st.markdown("""
     .update-info, .author-info {
         margin-top: 10px;
     }
-                  
+
     [data-testid="stSidebar"] > div:first-child {
         background: #DCF3EA; 
         border-radius: 15px; 
@@ -126,6 +126,20 @@ st.markdown("""
             0 8px 16px rgba(22, 66, 91, 0.2),  /* Ombre douce et plus large */
             0 16px 32px rgba(22, 66, 91, 0.2), /* Ombre plus intense */
             0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
+    }
+            
+    div[data-testid="stSlider"; "stInputNumber"] {
+        background-color: #FBFBFB;
+        border: 2px solid #16425B;
+        box-shadow: box-shadow: 
+            0 4px 8px rgba(141, 179, 197, 0.2), /* Couleur #8DB3C5 avec opacité 0.2 */
+            0 8px 16px rgba(22, 66, 91, 0.2),  /* Couleur #16425B avec opacité 0.2 */
+            0 16px 32px rgba(141, 179, 197, 0.3), /* Couleur #8DB3C5 avec opacité 0.3 */
+            0 32px 64px rgba(22, 66, 91, 0.3); /* Couleur #16425B avec opacité 0.3 */;
+        border-radius: 15px;
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     </style>
 """, unsafe_allow_html=True)
