@@ -18,6 +18,17 @@ st.set_page_config(
 with open("assets/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+st.markdown(f"""
+<div class="title-container">
+    <h1 class="main-title">Simulateur SCPI</h1>
+    <p class="subtitle">Investissez dans de l'immobilier professionnel à partir de 50 000€</p>
+    <div class="info-container">
+        <div class="update-info">Dernière mise à jour : {date.today().strftime('%d/%m/%Y')}</div>
+        <div class="author-info">Par Antoine Berjoan</div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 # MAIN APP
 st.markdown("""
     <style>
@@ -75,16 +86,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.markdown(f"""
-<div class="title-container">
-    <h1 class="main-title">Simulateur SCPI</h1>
-    <p class="subtitle">Investissez dans de l'immobilier professionnel à partir de 50 000€</p>
-    <div class="info-container">
-        <div class="update-info">Dernière mise à jour : {date.today().strftime('%d/%m/%Y')}</div>
-        <div class="author-info">Par Antoine Berjoan</div>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+
 
 
 
