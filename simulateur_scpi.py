@@ -128,18 +128,18 @@ def input_simulateur():
             options_tmi = [0, 11, 30, 41, 45]
 
             # Utiliser le slider pour choisir parmi les valeurs prédéfinies
-            taux_imposition = st.slider(
+            selected_index = st.slider(                
                 "🧮 Tranche d'imposition (TMI)",
                 min_value=min(options_tmi),
-                max_value=max(options_tmi),
-                value=min(options_tmi),
+                max_value=len(options_tmi) - 1,                
+                value=0,
                 step=1,
                 format="%d%%",
                 help="Choisissez la tranche d'imposition parmi les valeurs disponibles : 0%, 11%, 30%, 41%, 45%",
             )
 
             # Limiter les choix du slider aux valeurs discrètes définies
-            taux_imposition = min(options_tmi, key=lambda x: abs(x - taux_imposition))
+            taux_imposition = options_tmi[selected_index]
         
         with st.container():
             investissement_etranger = st.checkbox("Investissement en SCPI étrangères ?")
