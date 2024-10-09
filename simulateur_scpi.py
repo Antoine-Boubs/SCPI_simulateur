@@ -581,9 +581,33 @@ def main():
         # CSS personnalisé pour les cartes
         st.markdown("""
             <style>
-            .custom-card {
-                background-color: #F1F1F1;
+            .custom-card-1 {
+                background-color: #F1D89E;
                 border: 1px solid #16425B;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .custom-card-2 {
+                background-color: #E8B0AA;
+                border: 1px solid #D56844;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .custom-card-3 {
+                background-color: #AFC6DC;
+                border: 1px solid #CBA325;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .custom-card-4 {
+                background-color: #E8FEE8;
+                border: 1px solid #10505B;
                 border-radius: 10px;
                 padding: 20px;
                 text-align: center;
