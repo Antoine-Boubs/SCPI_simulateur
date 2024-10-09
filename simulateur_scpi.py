@@ -20,12 +20,12 @@ st.markdown("""
     <style>
     [data-testid="stSidebar"] > div:first-child {
         background: #DCF3EA; /* Couleur de fond */
-        border-radius: 12px; /* Optionnel : arrondir les coins */
+        border-radius: 12px; /* Arrondi des coins */
         box-shadow: 
-            0 4px 6px rgba(0, 0, 0, 0.1),  /* Ombre douce et proche */
-            0 8px 12px rgba(0, 0, 0, 0.1), /* Ombre moyenne */
-            0 16px 24px rgba(0, 0, 0, 0.1); /* Ombre plus diffuse */
-        padding: 20px; /* Optionnel : ajouter un padding pour plus de style */
+            0 8px 16px rgba(22, 66, 91, 0.2),  /* Ombre douce et plus large */
+            0 16px 32px rgba(22, 66, 91, 0.2), /* Ombre plus intense */
+            0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
+        padding: 20px; /* Ajouter un padding pour un style plus espacé */
     }
             
     div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label StSlider */
