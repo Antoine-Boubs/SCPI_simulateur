@@ -31,12 +31,12 @@ st.markdown(f"""
 st.markdown("""
     <style>
    .title-container {
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #CBA328;
-    border-radius: 10px;
-    margin: 20px 0;
-    position: relative; /* Ajoute du positionnement relatif pour les enfants */
+        text-align: center;
+        padding: 10px 20px;
+        border: 2px solid #CBA328;
+        border-radius: 10px;
+        margin: 10px 0;
+        position: relative;
     }
 
     .info-container {
@@ -45,22 +45,22 @@ st.markdown("""
         align-items: center;
         margin-top: 10px;
         width: 100%;
-        padding: 0 20px; /* Ajouter du padding pour espacer les côtés */
+        padding: 0 20px;
     }
 
     .update-info {
         font-size: 14px;
         color: #000000;
         font-style: italic;
-        text-align: left; /* Alignement à gauche */
-        flex: 1;
+        text-align: left;
+        flex-grow: 1;
     }
 
     .author-info {
         font-size: 14px;
         color: #CBA328;
-        text-align: right; /* Alignement à droite */
-        flex: 1;
+        text-align: right;
+        flex-grow: 1;
     }
 
             
