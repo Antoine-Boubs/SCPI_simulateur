@@ -171,6 +171,7 @@ st.markdown("""
         padding: 15px;
         margin-top: 10px;
         margin-bottom: 10px;
+        font-color: #8DB3C5
     }
 
     </style>
