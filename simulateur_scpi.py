@@ -130,7 +130,7 @@ st.markdown("""
             0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
     }
 
-    div[data-testid="stSelectbox"]{     
+    div[data-testid="stMetric"]{     
         background-color: #FBFBFB;
         border: 2px solid #16425B;
         border-radius: 15px;
@@ -147,13 +147,13 @@ st.markdown("""
 
     div[data-testid="stMetric"] p {  
         text-align: center;
-        font-size: 40px !important;
+        font-size: 16px !important;
         font-weight: 600 !important;
-        color: #16425B;
+        color: #CBA325;
     }   
     
     div[data-testid="stMetric"] label { 
-    text-align: center;
+        text-align: center;
         font-size: 40px !important;
         font-weight: 600 !important;
         color: #D56844;
