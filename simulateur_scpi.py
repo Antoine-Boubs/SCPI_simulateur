@@ -60,8 +60,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-
-
 def input_simulateur():
     with st.sidebar:
         st.header("📊 Paramètres d'investissement")
@@ -568,9 +566,9 @@ def main():
     with onglet1:            
         col1, col2, col3, col4 = st.columns(4)
 
-        # Calculs pour St.Metric
-        effort_net_total = sum(df_investissement["Effort Annuel Net"][:params["duree_pret"] // 12]) + params["apport"]
-        loyer_apres_pret = params["montant_investissement"] * params["rendement_souhaite"] * (1 + params["taux_revalorisation"]) ** (params["duree_pret"] // 12)
+        # Calcul pour St.Metric
+        effort_net_total = sum(df_investissement["Effort Annuel Net"][:params["duree_pret"] // 12])+ (params["apport"])
+        loyer_apres_pret = params["montant_investissement"] * params["rendement_souhaite"] * (1 + params["taux_revalorisation"])**(params["duree_pret"] // 12)
         rendement_brut = (loyer_apres_pret / effort_net_total) * 100
         revenu_mensuel = loyer_apres_pret / 12
         effort_mensuel_moyen = sum(df_investissement["Effort Mensuel Net"][:params["duree_pret"] // 12]) / (params["duree_pret"] // 12)
@@ -578,87 +576,18 @@ def main():
         loyer_net_apres_pret = loyer_apres_pret - impot_apres_pret
         rendement_net = (loyer_net_apres_pret / effort_net_total) * 100
 
-        # CSS personnalisé pour les cartes
-        st.markdown("""
-            <style>
-            .custom-card-1 {
-                background-color: #F1D89E;
-                border: 1px solid #16425B;
-                border-radius: 10px;
-                padding: 20px;
-                text-align: center;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            }
-            .custom-card-2 {
-                background-color: #E8B0AA;
-                border: 1px solid #D56844;
-                border-radius: 10px;
-                padding: 20px;
-                text-align: center;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            }
-            .custom-card-3 {
-                background-color: #AFC6DC;
-                border: 1px solid #CBA325;
-                border-radius: 10px;
-                padding: 20px;
-                text-align: center;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            }
-            .custom-card-4 {
-                background-color: #E8FEE8;
-                border: 1px solid #10505B;
-                border-radius: 10px;
-                padding: 20px;
-                text-align: center;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            }
-            .custom-card h2 {
-                font-size: 20px;
-                color: #CBA325;
-            }
-            .custom-card p {
-                font-size: 30px;
-                font-weight: bold;
-                color: #16425B;
-                margin: 0;
-            }
-            </style>
-        """, unsafe_allow_html=True)
-
-        # Afficher les cartes en utilisant du HTML
+        
         with col1:
-            st.markdown(f"""
-            <div class="custom-card">
-                <h2>Loyer Mensuel</h2>
-                <p>{revenu_mensuel:.0f}€</p>
-            </div>
-            """, unsafe_allow_html=True)
+            st.metric("Loyer Mensuel", f"{revenu_mensuel:.0f}€")
 
         with col2:
-            st.markdown(f"""
-            <div class="custom-card">
-                <h2>Effort Mensuel</h2>
-                <p>{effort_mensuel_moyen:.0f}€</p>
-            </div>
-            """, unsafe_allow_html=True)
-
+             st.metric("Effort Mensuel", f"{effort_mensuel_moyen:.0f}€", help='Apport non inclus dans le calcul')
+                
         with col3:
-            st.markdown(f"""
-            <div class="custom-card">
-                <h2>Rendement Brut</h2>
-                <p>{rendement_brut:.2f}%</p>
-            </div>
-            """, unsafe_allow_html=True)
+            st.metric("Rendement Brut", f"{rendement_brut:.2f}%")
 
         with col4:
-            st.markdown(f"""
-            <div class="custom-card">
-                <h2>Rendement Net</h2>
-                <p>{rendement_net:.2f}%</p>
-            </div>
-            """, unsafe_allow_html=True)
-
+            st.metric("Rendement Net", f"{rendement_net:.2f}%")
 
 
         plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
