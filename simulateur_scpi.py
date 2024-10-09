@@ -189,13 +189,26 @@ st.markdown("""
     [role="slider"] {
         background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
         height: 12px;
-        border: 2px solid #D56844;
+        border: 2px solid #CBA325;
     }
 
     [data-baseweb="slider"] > div:first-of-type > div:first-child {
         background-color: #8DB3C5 !important; /* après le curseur */
-        height: 6px; /* Ajuste la hauteur si nécessaire */
+        height: 6px; 
     }     
+            
+    button[kind="primary"] {
+        background-color: #8DB3C5;
+        border: 2px solid #CBA325;
+        color: #16425B;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-weight: bold;
+    }
+    button[kind="primary"]:hover {
+        background-color: #16425B;
+        color: #FFFFFF;
+    }
     </style>
 """, unsafe_allow_html=True)
 
