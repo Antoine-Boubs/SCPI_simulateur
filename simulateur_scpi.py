@@ -13,36 +13,210 @@ st.set_page_config(
     page_title="Simulateur SCPI", 
     page_icon="📊", 
     initial_sidebar_state="expanded", 
-    menu_items={
-        'Get help': 'https://www.antoineberjoan.com',
-        }
 )
 
 # MAIN APP
 st.markdown("""
     <style>
-    .st-emotion-cache-1075mzp {
-        position: absolute;
-        background: radial-gradient(circle, #FBFBFB, #EAEAEA); #✅
-        color: #202021;
-        inset: 80px;
-        color-scheme: light;
-        overflow: hidden;
+    
+    /* StSlider */
+
+    div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label StSlider */
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        width: 100%;
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        color:#202021;
+        margin-bottom: 0px;
+    }
+
+    div[data-testid="stSlider"] {
+        background-color: #FBFBFB;
+        border: 2px solid #CBA325;
+        box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);
         border-radius: 10px;
-        border: 3px solid #202021;  /* Bordure uniformisée */
-        box-shadow: 0px 8px 18px rgba(40, 66, 100, 0.8);  /* Ombre douce de couleur #284264 */
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+                        
+    /* Style for the slider thumb */
+    div[data-testid="stSlider"] div[data-baseweb="slider"] div[role="slider"] {
+        background-color: #8DB3C5;
+        border: 2px solid #16425B;
+    }
+
+
+
+    /* StNumberInput */
+    div[data-testid="stNumberInput"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label stNumberInput */
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        width: 100%;
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        color: #202021;
+        margin-bottom: 0px;
+    }
+
+    div[data-testid="stNumberInput"] {
+        background-color: #FBFBFB;
+        border: 2px solid #CBA325;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+                
+    input[type="number"] {
+        color: #202021 ;
+        border: none ;
+        border-radius: none !important;
+        padding: 5px 10px !important;
+        font-size: 16px !important;
+    }
+                
+    button[data-testid="stNumberInput-StepDown"],
+    button[data-testid="stNumberInput-StepUp"] {
+        background-color: none;
+        color: #16425B;
+        border: none !important;
+        border-radius: 3px !important;
+        padding: 20px 10px !important;
+        width: 10px !important;    
+        height: 10px !important;   
+    }
+            
+
+
+    .stApp {
+        background: radial-gradient(circle, #FBFBFB, #EAEAEA);        
+        inset: 10px;
+        border-radius: 10px;
+        border: 2px solid #CBA325
+    }
+            
+    [role="slider"] {
+    background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
+    }
+
+    [data-baseweb="slider"] > div:first-of-type > div:first-child {
+    background-color: #EAEAEA !important; /* Couleur dorée pour la partie avant le curseur */
+    height: 8px; /* Ajuste la hauteur si nécessaire */
+    }       
+                
+    [data-baseweb="slider"] > div:second-of-type > div:second-child {
+    background-color: #AFC6DC !important; /* Couleur dorée pour la partie avant le curseur */
+    height: 8px; /* Ajuste la hauteur si nécessaire */
+    } 
+
+    
+       
+    
+
+
+    /* StRadioGroup */
+    div[role="radiogroup"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }  
+    div[role="radiogroup"] label {
+        background-color: transparent;
+        padding: 10px 15px;
+        margin: 0 5px;
+        border-radius: 15px;
+        transition: border-color 0.3s, color 0.3s;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border: 2px solid #CBA325;
+        min-width: 100px;
+    }
+        
+    div[role="radiogroup"] label:hover {
+        border-color: #16425b;
+    }  
+    div[role="radiogroup"] label div {
+        display: flex;
+        align-items: center;
+    }
+    div[role="radiogroup"] label div p {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 0 10px;
+    }
+
+
+
+    /* StCheckbox */
+    div[data-testid="stCheckbox"] {
+        background-color: #FBFBFB;
+        border: 2px solid #CBA325;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    div[data-testid="stCheckbox"] div[data-testid="stMarkdownContainer"] p {
+        font-size: 13px !important;
+        font-weight: 400
+    }
+
+
+    /* StSelectbox */
+    div[data-testid="stSelectbox"] {
+        background-color: #FBFBFB;
+        border: 2px solid #CBA325;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    div[data-testid="stSelectbox"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p {
+        display: flex;
+        justify-content: left;
+        text-align: left;
+        width: 100%;
+        font-size: 13px !important; #âœ…
+        font-weight: 400 !important;
+        color: #202021;
+        margin-bottom: 5px;
+    }
+            
+
+    /* StMetric */
+    div[data-testid="stMetric"] label[data-testid="stMetricLabel"] {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        color: #202021;
+    }    
+    div[data-testid="stMetric"] div[data-testid="stMetricValue"] {
+        text-align: center;
+        font-size: 40px !important;
+        font-weight: 700 !important;
+        color: #16425B;
+    }
+    div[data-testid="stMetric"] {
+        background-color: #FBFBFB;
+        border: 3px solid #CBA325;
+        box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);
+        border-radius: 10px;
+        padding: 10px;
+    }
+
     </style>
     """, unsafe_allow_html=True)
 
-# SIDEBAR
-st.markdown(""" 
-<style>
-    [data-testid="stSidebar"] > div:first-child {
-        background: radial-gradient(circle, #EAEAEA, #FBFBFB);
-        border-right: 2px solid #CBA325;
-    }
-</style>
-""", unsafe_allow_html=True)
+
 
 # TITLE
 st.markdown("""
@@ -61,16 +235,19 @@ st.markdown("""
             0 8px 16px rgba(22, 66, 91, 0.1),
             0 16px 32px rgba(22, 66, 91, 0.1);
     }
+            
     .main-title {
         color: #CBA325;
         font-size: 40px;
         font-weight: 800;
         margin-bottom: 0.5rem;
     }
+            
     .subtitle {
         color: #16425b;
         font-size: 20px;
     }
+            
     .update-info {
         color:#202021;
         font-size: 12px;
@@ -79,6 +256,7 @@ st.markdown("""
         bottom: 5px;
         left: 10px;
     }
+            
     .author-info {
         color:#202021;
         font-size: 12px;
@@ -87,16 +265,20 @@ st.markdown("""
         bottom: 5px;
         right: 10px;
     }
+            
+    /* Onglets */
     .stTabs [data-baseweb="tab-list"] {
         gap: 20px;
         margin-bottom: 5px;
         border-radius: 10px;
         font-size: 30px;
     }
+            
     .stTabs [data-baseweb="tab-list"] p {
         font-size: 14px;
         font-weight: 500;
     }
+            
     .stTabs [data-baseweb="tab"] {
         height: auto;
         white-space: normal;
@@ -106,9 +288,38 @@ st.markdown("""
         border-radius: 10px;
         background-color: #EEEFF1;
     }
+            
     .stTabs [aria-selected="true"] {
         color: #16425B;
         border-bottom: 2px solid #202021;
+    }
+            
+    /* StSlider */
+    div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label StSlider */
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        width: 100%;
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        color:#202021;
+        margin-bottom: 0px;
+    }
+
+    div[data-testid="stSlider"] {
+        background-color: #FBFBFB;
+        border: 2px solid #CBA325;
+        box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+                        
+    /* Style for the slider thumb */
+    div[data-testid="stSlider"] div[data-baseweb="slider"] div[role="slider"] {
+        background-color: #8DB3C5;
+        border: 2px solid #16425B;
     }
 </style>
 """, unsafe_allow_html=True)
