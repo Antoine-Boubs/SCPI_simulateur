@@ -377,6 +377,7 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
                 df_investissement['Différence_Abs'].max())
     y_max_rounded = np.ceil(y_max / 1000) * 1000
 
+    # Mise en forme du graphique
     fig.update_layout(
         title=dict(
             text='<b>Vos revenus nets (Français vs Étranger)</b>',
@@ -411,7 +412,7 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
             range=[0, y_max_rounded]
         ),
         font=dict(family="Inter", size=14),
-        height=500,
+        height=600,
         width=1000,
         margin=dict(t=100, b=60, l=60, r=60),
         paper_bgcolor='rgba(0,0,0,0)',
@@ -422,12 +423,18 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
             y=1.02,
             xanchor="center",
             x=0.5,
+            bgcolor='rgba(255, 255, 255, 0.5)',  # Fond transparent pour la légende
+            traceorder="normal",
+            font=dict(size=12),
+            itemsizing="constant",
+            itemwidth=40,
         ),
         hovermode="x unified",
     )
 
     # Afficher le graphique avec des paramètres supplémentaires
     st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
+
 
 def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
     # Définition des couleurs
