@@ -618,16 +618,16 @@ def main():
             """
             <style>
             .custom-box {
-                background-color: #F8D7DA; /* Couleur de fond rose clair */
-                color: #721C24; /* Couleur du texte */
+                background-color: 'rgba(241, 216, 122, 0.3)'; /* Couleur de fond rose clair */
+                color: #16425B; /* Couleur du texte */
                 padding: 15px; /* Espacement interne */
-                border-radius: 8px; /* Coins arrondis */
-                border: 1px solid #F5C6CB; /* Bordure légère */
+                border-radius: 15px; /* Coins arrondis */
                 margin-bottom: 20px; /* Espace en dessous */
+                box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);
             }
             </style>
             <div class="custom-box">
-                L'investissement en SCPI a pour fonction première la distribution de revenus à une échéance donnée. Le but n'est pas la revente à court, moyen, moyen-long terme.
+                L'investissement en SCPI a pour fonction première la <strong>distribution de revenus complémentaires<strong> à une échéance donnée. Le but n'est pas la revente à court, moyen, moyen-long terme.
             </div>
             """,
             unsafe_allow_html=True
