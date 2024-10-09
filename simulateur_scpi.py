@@ -337,6 +337,7 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
             y=1.02,
             xanchor="center",
             x=0.5,
+            font=dict(size=14),
         ),
         hovermode="x unified",
     )
@@ -493,7 +494,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             x=0.5,
             bgcolor='rgba(0,0,0,0)',
             traceorder="normal",
-            font=dict(size=12),
+            font=dict(size=14),
             itemsizing="constant",
             itemwidth=40,
         )
@@ -559,14 +560,14 @@ def main():
             """
             <style>
             .custom-box {
-                background-color: rgba(232, 176, 170, 0.5); 
-                color: #A33432;
-                font-weight: 600;
+                background: rgba(251, 233, 186, 0.4);                
+                color: #DF9F46;
+                font-weight: 500;
                 padding: 20px; 
                 border-radius: 15px;
                 margin-top: 20px; 
                 margin-bottom: 20px; 
-                box-shadow: 0 4px 8px rgba(232, 176, 170, 1);
+                box-shadow: 0 4px 10px rgba(251, 233, 186, 0.6);
             }
             </style>
             <div class="custom-box">
@@ -580,6 +581,14 @@ def main():
         plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
 
         graphique_loyers_francais_vs_etrangers(df_investissement)
+        st.markdown(
+            """
+            <div class="custom-box">
+                Ce sont vos revenus <strong>net de fiscalité.  <br>Les loyers français bénéficient de la déduction des intérêts d'emprunts</strong> pendant la période de financement.
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
         
 
             
