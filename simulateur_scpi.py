@@ -418,10 +418,10 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
         font-weight: 700; 
         margin-top: 30px; 
         margin-bottom: 0px; 
-        background-color: rgba(141, 179, 197, 0.2); 
+        background-color: rgba(251, 251, 251, 1); 
         padding: 20px 15px; 
         border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
         '> Vos revenus nets (Français vs Étranger)
     </h2>
     """, unsafe_allow_html=True)
@@ -577,7 +577,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         background-color: rgba(251, 251, 251, 1); 
         padding: 20px 15px; 
         border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
         '> La vie de votre investissement
     </h2>
     """, unsafe_allow_html=True)
@@ -628,7 +628,8 @@ def main():
             <style>
             .custom-box {
                 background-color: rgba(232, 176, 170, 0.5); 
-                color: #202021;
+                color: #A33432;
+                font-weight: 600
                 padding: 20px; 
                 border-radius: 15px; 
                 margin-bottom: 20px; 
