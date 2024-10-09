@@ -128,11 +128,14 @@ st.markdown("""
             0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
     }
             
-   div[data-testid="stSlider"], div[data-testid="stInputNumber"] {
+    div[data-testid="stSlider"], div[data-testid="stNumberInput"] {
         background-color: #FBFBFB;
         border: 2px solid #CBA328;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
-
     </style>
 """, unsafe_allow_html=True)
 
