@@ -34,18 +34,17 @@ st.markdown("""
         padding-top: 20px;
     }
             
-    div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label StSlider */
+    div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { 
         display: flex;
         justify-content: center;
         text-align: left;
         width: 100%;
-        
+        font-size: 13px !important;
+        font-weight: 900 !important;
+        color:#202021;
         margin-bottom: 0px;
     }
-    /* Couleur du texte pour les labels des sliders */
-    div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p {
-        color: #ff4b5c !important; /* Couleur rose par exemple */
-    }
+    
 
     /* Couleur du texte pour les labels des champs de saisie numérique */
     div[data-testid="stNumberInput"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p {
