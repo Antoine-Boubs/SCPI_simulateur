@@ -32,7 +32,7 @@ st.markdown(f"""
 
 st.markdown("""
     <style>
-        div[data-baseweb="tab"] > button {
+        div[data-baseweb="tab"] p {
             font-size: 18px; /* Taille de la police */
             font-weight: bold; /* Optionnel : mettre en gras */
             color: #16425B; /* Couleur du texte */
