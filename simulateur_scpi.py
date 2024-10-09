@@ -577,8 +577,6 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             xanchor="center",
             x=0.5,
             bgcolor='rgba(0,0,0,0)',
-            bordercolor='rgba(0, 0, 0, 0.2)',    # Bordure légèrement foncée pour simuler une ombre
-            borderwidth=2,
             traceorder="normal",
             font=dict(size=10),
             itemsizing="constant",
