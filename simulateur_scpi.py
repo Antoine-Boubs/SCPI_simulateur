@@ -21,9 +21,12 @@ with open("assets/style.css") as f:
 st.markdown(f"""
 <div class="title-container">
     <h1 class="main-title">Simulateur SCPI</h1>
+    <div class="separator"></div>
     <p class="subtitle">Investissez dans de l'immobilier professionnel à partir de 50 000€</p>
-    <div class="update-info">Dernière mise à jour : {date.today().strftime('%d/%m/%Y')}</div>
-    <div class="author-info">Par Antoine Berjoan</div>
+    <div class="info-container">
+        <div class="update-info">Dernière mise à jour : 09/10/2024</div>
+        <div class="author-info">Par Antoine Berjoan</div>
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -32,35 +35,59 @@ st.markdown("""
     <style>
    .title-container {
         text-align: center;
-        padding: -10px 20px;
+        padding: 30px;
         border: 2px solid #CBA328;
-        border-radius: 10px;
-        margin: 10px 0;
+        border-radius: 15px;
+        background-color: #F8F9FB;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        position: relative;
+        max-width: 800px; /* Largeur maximale */
+    }
+
+    .main-title {
+        font-size: 36px;
+        font-weight: 800;
+        background: linear-gradient(90deg, #16425B, #8DB3C5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        color: #8DB3C5;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    .separator {
+        height: 2px;
+        background-color: #CBA328;
+        width: 50%;
+        margin: 0 auto 20px auto;
     }
 
     .info-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 10px;
-        width: 100%;
-        padding: 0 20px;
-    }
-
-    .update-info {
         font-size: 14px;
-        color: #000000;
+        color: #6C757D;
         font-style: italic;
-        text-align: left;
-        flex-grow: 1;
+        margin-top: 20px;
     }
 
     .author-info {
-        font-size: 14px;
+        font-weight: 600;
         color: #CBA328;
-        text-align: right;
-        flex-grow: 1;
     }
+
+    .update-info:hover, .author-info:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
 
             
     [data-testid="stSidebar"] > div:first-child {
