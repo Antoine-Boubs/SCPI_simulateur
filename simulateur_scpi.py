@@ -214,6 +214,16 @@ st.markdown("""
         border-radius: 10px;
         padding: 10px;
     }
+    
+    div[data-testid="stMetric"] {
+    transition: transform 0.3s ease; /* Transition douce */
+    }
+
+    /* Zoom au survol */
+    div[data-testid="stMetric"]:hover {
+        transform: scale(1.05); /* Zoom de 5% */
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Optionnel : ajouter une ombre pour accentuer l'effet */
+    }
 
     </style>
     """, unsafe_allow_html=True)
@@ -255,7 +265,7 @@ st.markdown("""
         font-size: 12px;
         font-weight: 500;
         position: absolute;
-        bottom: 5px;
+        bottom: 0px;
         left: 10px;
     }
             
@@ -264,7 +274,7 @@ st.markdown("""
         font-size: 12px;
         font-weight: 500;
         position: absolute;
-        bottom: 5px;
+        bottom: 0px;
         right: 10px;
     }
             
