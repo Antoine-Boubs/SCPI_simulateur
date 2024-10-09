@@ -145,14 +145,14 @@ st.markdown("""
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5); /* Optionnel : ajouter une ombre pour accentuer l'effet */
     }
 
-    div[data-testid="stSelectbox"] p {  
+    div[data-testid="stMetric"] p {  
         text-align: center;
         font-size: 40px !important;
         font-weight: 600 !important;
         color: #16425B;
     }   
     
-    div[data-testid="stSelectbox"] label { 
+    div[data-testid="stMetric"] label { 
     text-align: center;
         font-size: 40px !important;
         font-weight: 600 !important;
