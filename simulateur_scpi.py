@@ -119,11 +119,11 @@ st.markdown("""
             
 
     [data-testid="stSidebar"] > div:first-child {
-        background: #DCF3EA; 
+        background-color: rgba(141, 179, 197, 0.2); 
         border-radius: 15px; 
-        border-right: 2px solid #10505B;
-        border-bottom: 2px solid #10505B;
-        border-top: 2px solid #10505B;
+        border-right: 2px solid #16425B;
+        border-bottom: 2px solid #16425B;
+        border-top: 2px solid #16425B;
         box-shadow: 
             0 8px 16px rgba(22, 66, 91, 0.2),  /* Ombre douce et plus large */
             0 16px 32px rgba(22, 66, 91, 0.2), /* Ombre plus intense */
