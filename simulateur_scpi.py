@@ -567,7 +567,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         font=dict(family="Inter", size=14),
         height=600,
         width=1000,
-        margin=dict(t=80, b=60, l=60, r=60),
+        margin=dict(t=60, b=60, l=60, r=60),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         legend=dict(
@@ -580,7 +580,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             traceorder="normal",
             font=dict(size=10),
             itemsizing="constant",
-            itemwidth=150,
+            itemwidth=40,
         )
     )
 
