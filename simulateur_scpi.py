@@ -155,11 +155,11 @@ st.markdown("""
     div[data-testid="stMetricValue"] {
         text-align: center;
         font-size: 40px !important;
-        font-weight: 600 !important;
+        font-weight: 500 !important;
         color: #16425B;
     }
     
-    div[data-testid="stMetric"] label { 
+    div[data-testid="stMetricLabel"] { 
         text-align: center;
         font-size: 40px !important;
         font-weight: 600 !important;
