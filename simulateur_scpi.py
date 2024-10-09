@@ -151,6 +151,13 @@ st.markdown("""
         font-weight: 600 !important;
         color: #CBA325;
     }   
+            
+    div[data-testid="stMetricValue"] {
+        text-align: center;
+        font-size: 40px !important;
+        font-weight: 600 !important;
+        color: #16425B;
+    }
     
     div[data-testid="stMetric"] label { 
         text-align: center;
