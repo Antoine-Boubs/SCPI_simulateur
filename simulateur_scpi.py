@@ -45,14 +45,16 @@ st.markdown("""
         }
 
             
-        [data-baseweb="tab"] {
-            background-color: rgba(141, 179, 197, 0.5); 
+        div [data-baseweb="tab"] {
+            background-color: #E8F0F2;
             border-radius: 10px;
-            color: #16425B; 
-            padding: 10px 20px; /* Espacement intérieur */
-            margin: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre */
-            font-weight: 700; /* Mettre le texte en gras */
+            padding: 10px 15px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #16425B;
+            margin-right: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
         }
 
         [data-baseweb="tab"]:not([aria-selected="true"]) {
@@ -124,22 +126,7 @@ def input_simulateur():
             delai_jouissance = st.slider("🕒 Délai de jouissance (mois)", 0, 12, 6)
             taux_revalorisation = st.slider("📊 Taux de revalorisation (%)", 0.0, 5.0, 1.0, 0.1) / 100
             frais_souscription = st.slider("💸 Frais de souscription (%)", 0.0, 20.0, 12.0, 0.5) / 100
-            
-            options_tmi = [0, 11, 30, 41, 45]
-
-            # Utiliser le slider pour choisir parmi les valeurs prédéfinies
-            selected_index = st.slider(                
-                "🧮 Tranche d'imposition (TMI)",
-                min_value=min(options_tmi),
-                max_value=len(options_tmi) - 1,                
-                value=0,
-                step=1,
-                format="%d%%",
-                help="Choisissez la tranche d'imposition parmi les valeurs disponibles : 0%, 11%, 30%, 41%, 45%",
-            )
-
-            # Limiter les choix du slider aux valeurs discrètes définies
-            taux_imposition = options_tmi[selected_index]
+            taux_imposition = st.select_slider("🚥 Taux d'imposition (TMI)",options=[0, 11, 30, 41, 45],value=30)
         
         with st.container():
             investissement_etranger = st.checkbox("Investissement en SCPI étrangères ?")
@@ -661,7 +648,7 @@ def main():
             }
             </style>
             <div class="custom-box">
-                L'investissement en SCPI a pour fonction première la <strong>distribution de revenus complémentaires</strong> à une échéance donnée. <strong>L'objectif' n'est pas la revente</strong> à court, moyen, moyen-long terme.
+                L'investissement en SCPI a pour fonction première la <strong>distribution de revenus complémentaires</strong> à une échéance donnée. <strong>L'objectif n'est pas la revente</strong> à court, moyen ou moyen-long terme.
             </div>
             """,
             unsafe_allow_html=True
