@@ -41,7 +41,7 @@ st.markdown("""
         border-radius: 15px;
         background-color: #F8F9FB;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        margin: 20px auto;
+        margin: 0px auto;
         position: relative;
         max-width: 800px;
     }
