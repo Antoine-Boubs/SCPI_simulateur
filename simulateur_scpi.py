@@ -627,7 +627,7 @@ def main():
             }
             </style>
             <div class="custom-box">
-                L'investissement en SCPI a pour fonction première la <strong>distribution de revenus complémentaires<strong> à une échéance donnée. Le but n'est pas la revente à court, moyen, moyen-long terme.
+                L'investissement en SCPI a pour fonction première la <strong>distribution de revenus complémentaires</strong> à une échéance donnée. Le but n'est pas la revente à court, moyen, moyen-long terme.
             </div>
             """,
             unsafe_allow_html=True
