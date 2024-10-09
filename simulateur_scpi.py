@@ -202,10 +202,8 @@ st.markdown("""
         color: #202021 ;
         border: 0.5px solid #8DB3C5;
         background-color: rgba(141, 179, 197, 0.2);
-        border-radius: none !important;
-        padding: 5px 10px !important;
-        font-size: 14px !important;
-        font-weight: 500;
+        font-size: 16px !important;
+        font-weight: 600;
     }  
             
     </style>
