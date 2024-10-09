@@ -316,8 +316,8 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
     couleur_francais_aire = 'rgba(141, 179, 197, 0.3)' 
     couleur_etranger = '#CBA325' 
     couleur_etranger_aire = 'rgba(241, 216, 122, 0.5)'
-    couleur_somme = '#ACADAF'  
-    couleur_somme_aire = 'rgba(208, 209, 211, 0.5)'  
+    couleur_total = '#10505B'
+    couleur_total_aire = 'rgba(220, 243, 234, 0.5)'
 
     # Calculer la différence et sa valeur absolue
     df_investissement['Différence'] = df_investissement['Loyer Net Français'] - df_investissement['Loyer Net Étranger']
@@ -327,19 +327,6 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
     df_investissement['Revenus Totaux'] = df_investissement['Loyer Net Français'] + df_investissement['Loyer Net Étranger']
 
     fig = go.Figure()
-
-    # Revenus Totaux (en arrière-plan)
-    fig.add_trace(go.Scatter(
-        x=df_investissement['Année'],
-        y=df_investissement['Revenus Totaux'],
-        name='Revenus Totaux',
-        mode='lines',
-        line=dict(color=couleur_somme, width=2),
-        fill='tozeroy',
-        fillcolor=couleur_somme_aire,
-        hovertemplate='<span style="color:' + couleur_somme + ';">●</span> Revenus Totaux <br>Montant: <b>%{y:.0f} €</b><extra></extra>',
-        showlegend=True,  # Afficher dans la légende
-    ))
 
     # Loyer Français
     fig.add_trace(go.Scatter(
@@ -362,7 +349,19 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
         line=dict(color=couleur_etranger, width=3),
         fill='tozeroy',
         fillcolor=couleur_etranger_aire,
-        hovertemplate='<span style="color:' + couleur_etranger + ';">●</span> Loyer Étranger <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
+        hovertemplate='<span style="color:' + couleur_etranger + ';">●</span> Loyer Étranger <br> Montant: <b>%{y:.0f} €</b><extra></extra>'
+    ))
+
+    # Revenus Totaux
+    fig.add_trace(go.Scatter(
+        x=df_investissement['Année'],
+        y=df_investissement['Revenus Totaux'],
+        name='Revenus Totaux',
+        mode='lines',
+        line=dict(color=couleur_total, width=2, dash='dash'),
+        fill='tozeroy',
+        fillcolor=couleur_total_aire,
+        hovertemplate='<span style="color:' + couleur_total + ';">●</span> Revenus Totaux <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
     ))
 
     # Différence (valeur absolue) avec changement de couleur
@@ -377,23 +376,9 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
             hoverinfo='skip'
         ))
 
-    # Calculer le maximum pour l'axe y et arrondir au multiple de 1000 supérieur
-    y_max = max(df_investissement['Loyer Net Français'].max(),
-                df_investissement['Loyer Net Étranger'].max(),
-                df_investissement['Revenus Totaux'].max(),
-                df_investissement['Différence_Abs'].max())
-    y_max_rounded = np.ceil(y_max / 1000) * 1000
-
-    # Mettre à jour la mise en page du graphique
+    # Supprimer le titre du graphique Plotly
     fig.update_layout(
-        title=None(
-            text='<b>Vos revenus nets (Français vs Étranger)</b>',
-            font=dict(family="Inter", size=24, color="#16425B"),
-            x=0.5,
-            xanchor='center',
-            y=0.95,
-            yanchor='top',
-        ),
+        title=None,
         xaxis=dict(
             title="<b>Années</b>",
             tickmode='linear',
@@ -418,33 +403,29 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
             showline=True,
             linewidth=3,
             linecolor='#CBA325',
-            range=[0, y_max_rounded]
         ),
         font=dict(family="Inter", size=14),
         height=500,
         width=1000,
-        margin=dict(t=100, b=60, l=60, r=60),
+        margin=dict(t=60, b=60, l=60, r=60),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         legend=dict(
             orientation="h",
-            yanchor="top",
-            y=1.15,
+            yanchor="bottom",
+            y=1.02,
             xanchor="center",
             x=0.5,
-            bgcolor='rgba(0,0,0,0)',
-            traceorder="normal",
             font=dict(size=12),
-            itemsizing="constant",
-            itemwidth=40,
         ),
         hovermode="x unified",
     )
 
+    # Ajouter le titre en tant qu'élément séparé
+    st.markdown("<h2 style='text-align: center; color: #16425B;'>Vos revenus nets (Français vs Étranger)</h2>", unsafe_allow_html=True)
+
     # Afficher le graphique
     st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
-
-
 
 
 def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
@@ -663,9 +644,10 @@ def main():
             unsafe_allow_html=True
         )
 
-        st.markdown("<h2 style='text-align: center; color: #16425B;'>Vos revenus nets (Français vs Étranger)</h2>", unsafe_allow_html=True)
+        
         plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
 
+        st.markdown("<h2 style='text-align: center; color: #16425B;'>Vos revenus nets (Français vs Étranger)</h2>", unsafe_allow_html=True)
         graphique_loyers_francais_vs_etrangers(df_investissement)
         
 
