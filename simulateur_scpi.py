@@ -164,7 +164,7 @@ st.markdown("""
             
 
 
-    div[data-testid="stSlider"], div[data-testid="stNumberInput"] {
+    div[data-testid="stSlider"], div[data-testid="stNumberInput"], div[data-testid="stCheckbox"], div[data-testid="stSelectbox"]{
         background-color: #FBFBFB;
         border: 2px solid #CBA328;
         border-radius: 10px;
