@@ -618,7 +618,7 @@ def main():
             """
             <style>
             .custom-box {
-                background-color: 'rgba(241, 216, 122, 0.3)'; /* Couleur de fond rose clair */
+                background-color: rgba(241, 216, 122, 0.3); /* Couleur de fond rose clair */
                 color: #16425B; /* Couleur du texte */
                 padding: 15px; /* Espacement interne */
                 border-radius: 15px; /* Coins arrondis */
