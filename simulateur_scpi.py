@@ -115,7 +115,7 @@ st.markdown("""
     .update-info, .author-info {
         margin-top: 10px;
     }
-
+}
             
 
     [data-testid="stSidebar"] > div:first-child {
@@ -131,7 +131,29 @@ st.markdown("""
     }
 
             
-                
+    div[data-testid="stMetric"] label[data-testid="stMetricLabel"] {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        color: #202021;
+    }    
+    div[data-testid="stMetric"] div[data-testid="stMetricValue"] {
+        text-align: center;
+        font-size: 40px !important;
+        font-weight: 700 !important;
+        color: #16425B;
+    }
+    div[data-testid="stMetric"] {
+        background-color: #FBFBFB;
+        border: 3px solid #CBA325;
+        box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);
+        border-radius: 10px;
+        padding: 10px;
+    }      
+
     div[data-testid="stMetric"] {
         transition: transform 0.3s ease; /* Transition douce */
     }
