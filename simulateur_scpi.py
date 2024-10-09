@@ -199,20 +199,21 @@ st.markdown("""
     }   
 
     input[type="number"] {
-        color: #D56844 ;
-        border: 0.5px solid #8DB3C5;
+        color: #202021 ;
+        border: 3.5px solid #8DB3C5;
         background-color: rgba(141, 179, 197, 0.2);
         font-size: 16px !important;
         font-weight: 500;
     }   
 
+
+            
+
     div[role="radiogroup"] {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 1rem;
-    }  
-    div[role="radiogroup"] label {
+        margin-top: 10px;
         background-color: transparent;
         padding: 10px 15px;
         margin: 0 5px;
@@ -225,8 +226,6 @@ st.markdown("""
         min-width: 100px;
     }
 
-            
-             
     div[role="radiogroup"] label:hover {
         border-color: #16425b;
     }  
