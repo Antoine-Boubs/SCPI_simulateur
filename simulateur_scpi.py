@@ -33,7 +33,8 @@ st.markdown(f"""
 # CSS
 st.markdown("""
     <style>
-   .title-container {
+   /* Styles de base pour les écrans normaux */
+    .title-container {
         text-align: center;
         padding: 30px;
         border: 2px solid #CBA328;
@@ -42,7 +43,7 @@ st.markdown("""
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         margin: 20px auto;
         position: relative;
-        max-width: 800px; /* Largeur maximale */
+        max-width: 800px;
     }
 
     .main-title {
@@ -86,6 +87,34 @@ st.markdown("""
     .update-info:hover, .author-info:hover {
         text-decoration: underline;
         cursor: pointer;
+    }
+
+/* Styles pour les écrans mobiles */
+@media (max-width: 768px) {
+    .title-container {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    .main-title {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .separator {
+        width: 70%;
+    }
+
+    .info-container {
+        flex-direction: column; /* Affichage en colonne pour les petits écrans */
+        text-align: center;
+    }
+
+    .update-info, .author-info {
+        margin-top: 10px;
     }
 
 
