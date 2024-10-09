@@ -547,7 +547,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         hovermode="x unified",
         font=dict(family="Inter", size=14),
         height=600,
-        width=1000,
+        width=1200,
         margin=dict(t=60, b=60, l=60, r=60),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
@@ -574,7 +574,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         font-weight: 700; 
         margin-top: 30px; 
         margin-bottom: 0px; 
-        background-color: rgba(232, 176, 170, 0.2); 
+        background-color: rgba(141, 179, 197, 0.2); 
         padding: 20px 15px; 
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
