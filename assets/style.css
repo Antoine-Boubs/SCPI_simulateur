@@ -142,6 +142,7 @@ p {
     div[data-testid="stMetric"] p {
         font-size: 16px !important;
         font-weight: 400 !important;
+        text-align: center;
         color: #CBA325;
     }
 
