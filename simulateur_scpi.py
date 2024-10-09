@@ -95,19 +95,6 @@ st.markdown("""
             border-radius: 10px; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-            
-        .stMarkdown .stHeading h2 {
-            color: #16425B; 
-            font-size: 20px; 
-            font-weight: 700; 
-            margin-top: -30px; /* Espace au-dessus */
-            margin-bottom: 20px; /* Espace en dessous */
-            text-align: center; 
-            background-color: #'rgba(241, 216, 122)'; 
-            padding: 10px 15px; /* Ajouter du padding pour l'espacement */
-            border-radius: 10px; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -410,8 +397,22 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
     )
 
     # Ajouter le titre en tant qu'élément séparé
-    st.markdown("<h2 style='text-align: center; color: #16425B;'>Vos revenus nets (Français vs Étranger)</h2>", unsafe_allow_html=True)
-
+    st.markdown("""
+    <h2 style='
+        text-align: center; 
+        color: #16425B; 
+        font-size: 20px; 
+        font-weight: 700; 
+        margin-top: -30px; 
+        margin-bottom: 20px; 
+        background-color: rgba(241, 216, 122, 0.3); 
+        padding: 10px 15px; 
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);'>
+        Vos revenus nets (Français vs Étranger)
+    </h2>
+    """, unsafe_allow_html=True)
+    
     # Afficher le graphique
     st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
 
