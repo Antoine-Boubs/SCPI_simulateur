@@ -440,7 +440,7 @@ def create_line_segments(x, y, color):
 
 def graphique_loyers_francais_vs_etrangers(df_investissement): 
     couleur_francais = '#16425B' 
-    couleur_francais_aire = 'background-color: rgba(141, 179, 197, 0.2)' 
+    couleur_francais_aire = '#8DB3C5' 
     couleur_etranger = '#CBA325' 
     couleur_etranger_aire = '#F1D87A'
 
