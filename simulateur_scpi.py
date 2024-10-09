@@ -25,10 +25,11 @@ st.markdown("""
         border-bottom: 2px solid #10505B;
         border-top: 2px solid #10505B;
         box-shadow: 
-            0 8px 16px rgba(22, 66, 91, 0.2),  /* Ombre douce et plus large */
+            -10px 0 20px rgba(22, 66, 91, 0.1), /* Ombre plus prononcée vers la gauche */
             0 16px 32px rgba(22, 66, 91, 0.2), /* Ombre plus intense */
             0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
-        padding: 20px; /* Ajouter un padding pour un style plus espacé */
+        padding: 10px; /* Ajouter un padding pour un style plus espacé */
+        padding-top: 10px;
     }
             
     div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label StSlider */
