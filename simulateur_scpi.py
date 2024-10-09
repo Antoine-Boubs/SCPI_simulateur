@@ -216,7 +216,7 @@ st.markdown("""
         background-color: rgba(141, 179, 197, 0.2);
         padding: 10px 15px;
         border-radius: 15px;
-        min-width: 100%;
+        min-width: 80px;
     }
 
     div[role="radiogroup"] label:first-of-type {
@@ -227,7 +227,7 @@ st.markdown("""
         margin-right: 20px; /* Déplace "Après" un peu plus à droite */
     }
     
-    div[role="radiogroup"] label {
+    div[role="radiogroup"] p {
         font-size: 16px;
         font-weight: 500;
         color: #202021;
