@@ -32,6 +32,12 @@ st.markdown(f"""
 
 st.markdown("""
     <style>
+        div[data-baseweb="tab"] > button {
+            font-size: 18px; /* Taille de la police */
+            font-weight: bold; /* Optionnel : mettre en gras */
+            color: #16425B; /* Couleur du texte */
+        }
+            
         [data-baseweb="tab"] {
             background-color: rgba(141, 179, 197, 0.5); 
             border-radius: 10px;
@@ -56,7 +62,7 @@ st.markdown("""
         }
 
         [data-baseweb="tab-highlight"] {
-            background-color: #8DB3C5;
+            background-color: #16425b;
             height: 3px;
             border-radius: 2px;
         }
