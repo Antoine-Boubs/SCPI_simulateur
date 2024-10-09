@@ -205,7 +205,8 @@ st.markdown("""
         font-size: 16px !important;
         font-weight: 500;
     }  
-    button[data-testid="stNumberInput-StepDown"], button[data-testid="stNumberInput-StepUp"] {
+            
+    [data-testid="stNumberInput-StepDown"], button[data-testid="stNumberInput-StepUp"] {
         background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
         color: #16425B;
         border: none !important;
