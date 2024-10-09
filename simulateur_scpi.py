@@ -32,11 +32,18 @@ st.markdown(f"""
 
 st.markdown("""
     <style>
-        div[data-baseweb="tab"] p {
-            font-size: 18px; /* Taille de la police */
-            font-weight: bold; /* Optionnel : mettre en gras */
+         div[data-baseweb="tab"] > button {
+            font-size: 8px; /* Taille du texte */
+            font-weight: bold;
             color: #16425B; /* Couleur du texte */
+            background-color: rgba(241, 216, 122, 0.3); /* Fond de couleur similaire */
+            border-radius: 10px;
+            padding: 10px 20px; /* Ajouter du padding pour l'espacement */
+            border: 2px solid #16425B;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 5px; /* Espace entre les onglets */
         }
+
             
         [data-baseweb="tab"] {
             background-color: rgba(141, 179, 197, 0.5); 
