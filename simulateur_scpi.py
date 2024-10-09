@@ -574,7 +574,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         font-weight: 700; 
         margin-top: 30px; 
         margin-bottom: 0px; 
-        background-color: rgba(141, 179, 197, 0.2); 
+        background-color: rgba(251, 251, 251, 1); 
         padding: 20px 15px; 
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -632,7 +632,7 @@ def main():
                 padding: 20px; 
                 border-radius: 15px; 
                 margin-bottom: 20px; 
-                box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);
+                box-shadow: 0 4px 8px rgba(232, 176, 170, 1);
             }
             </style>
             <div class="custom-box">
