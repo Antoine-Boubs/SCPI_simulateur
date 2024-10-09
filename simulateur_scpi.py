@@ -303,17 +303,30 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
     couleur_francais_aire = 'rgba(141, 179, 197, 0.3)' 
     couleur_etranger = '#CBA325' 
     couleur_etranger_aire = 'rgba(241, 216, 122, 0.5)'
-    couleur_somme = '#10505B'  # Couleur pour la somme des loyers
-    couleur_somme_aire = 'rgba(220, 243, 234, 0.5)'  # Couleur pour l'aire
+    couleur_somme = '#10505B'  # Couleur pour les revenus totaux
+    couleur_somme_aire = 'rgba(220, 243, 234, 0.5)'  # Couleur pour l'aire des revenus totaux
 
     # Calculer la différence et sa valeur absolue
     df_investissement['Différence'] = df_investissement['Loyer Net Français'] - df_investissement['Loyer Net Étranger']
     df_investissement['Différence_Abs'] = np.abs(df_investissement['Différence'])
 
     # Calculer la somme des deux loyers
-    df_investissement['Somme Loyers'] = df_investissement['Loyer Net Français'] + df_investissement['Loyer Net Étranger']
+    df_investissement['Revenus Totaux'] = df_investissement['Loyer Net Français'] + df_investissement['Loyer Net Étranger']
 
     fig = go.Figure()
+
+    # Revenus Totaux (en arrière-plan)
+    fig.add_trace(go.Scatter(
+        x=df_investissement['Année'],
+        y=df_investissement['Revenus Totaux'],
+        name='Revenus Totaux',
+        mode='lines',
+        line=dict(color=couleur_somme, width=2),
+        fill='tozeroy',
+        fillcolor=couleur_somme_aire,
+        hovertemplate='<span style="color:' + couleur_somme + ';">●</span> Revenus Totaux <br>Montant: <b>%{y:.0f} €</b><extra></extra>',
+        showlegend=True,  # Afficher dans la légende
+    ))
 
     # Loyer Français
     fig.add_trace(go.Scatter(
@@ -336,25 +349,26 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
         line=dict(color=couleur_etranger, width=3),
         fill='tozeroy',
         fillcolor=couleur_etranger_aire,
-        hovertemplate='<span style="color:' + couleur_etranger + ';">●</span> Loyer Étranger <br> Montant: <b>%{y:.0f} €</b><extra></extra>'
+        hovertemplate='<span style="color:' + couleur_etranger + ';">●</span> Loyer Étranger <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
     ))
 
-    # Somme des loyers
-    fig.add_trace(go.Scatter(
-        x=df_investissement['Année'],
-        y=df_investissement['Somme Loyers'],
-        name='Somme des Loyers',
-        mode='lines',
-        line=dict(color=couleur_somme, width=2),
-        fill='tozeroy',
-        fillcolor=couleur_somme_aire,
-        hovertemplate='<span style="color:' + couleur_somme + ';">●</span> Somme des Loyers <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
-    ))
+    # Différence (valeur absolue) avec changement de couleur
+    for i in range(len(df_investissement) - 1):
+        color = couleur_francais if df_investissement['Différence'].iloc[i] >= 0 else couleur_etranger
+        fig.add_trace(go.Scatter(
+            x=df_investissement['Année'].iloc[i:i+2],
+            y=df_investissement['Différence_Abs'].iloc[i:i+2],
+            mode='lines',
+            line=dict(color=color, width=2),
+            showlegend=False,
+            hoverinfo='skip'
+        ))
 
     # Calculer le maximum pour l'axe y et arrondir au multiple de 1000 supérieur
     y_max = max(df_investissement['Loyer Net Français'].max(),
                 df_investissement['Loyer Net Étranger'].max(),
-                df_investissement['Somme Loyers'].max())
+                df_investissement['Revenus Totaux'].max(),
+                df_investissement['Différence_Abs'].max())
     y_max_rounded = np.ceil(y_max / 1000) * 1000
 
     # Mettre à jour la mise en page du graphique
@@ -416,6 +430,7 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
 
     # Afficher le graphique
     st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
+
 
 
 
