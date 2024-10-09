@@ -315,6 +315,30 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
 
     fig = go.Figure()
 
+    # Différence (ligne bicolore)
+    for i in range(len(df_investissement) - 1):
+        color = couleur_francais if df_investissement['Différence'].iloc[i] >= 0 else couleur_etranger
+        fig.add_trace(go.Scatter(
+            x=df_investissement['Année'].iloc[i:i+2],
+            y=df_investissement['Différence_Abs'].iloc[i:i+2],
+            mode='lines',
+            line=dict(color=color, width=2),
+            showlegend=False,
+            hoverinfo='skip'
+        ))
+
+    # Revenus Totaux
+    fig.add_trace(go.Scatter(
+        x=df_investissement['Année'],
+        y=df_investissement['Revenus Totaux'],
+        name='Revenus Totaux',
+        mode='lines',
+        line=dict(color=couleur_somme, width=2, dash='dash'),
+        fill='tozeroy',
+        fillcolor=couleur_somme_aire,
+        hovertemplate='<span style="color:' + couleur_somme + ';">●</span> Revenus Totaux <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
+    ))
+
     # Loyer Français
     fig.add_trace(go.Scatter(
         x=df_investissement['Année'],
@@ -338,30 +362,6 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
         fillcolor=couleur_etranger_aire,
         hovertemplate='<span style="color:' + couleur_etranger + ';">●</span> Loyer Étranger <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
     ))
-
-    # Revenus Totaux
-    fig.add_trace(go.Scatter(
-        x=df_investissement['Année'],
-        y=df_investissement['Revenus Totaux'],
-        name='Revenus Totaux',
-        mode='lines',
-        line=dict(color=couleur_somme, width=2, dash='dash'),
-        fill='tozeroy',
-        fillcolor=couleur_somme_aire,
-        hovertemplate='<span style="color:' + couleur_somme + ';">●</span> Revenus Totaux <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
-    ))
-
-    # Différence (ligne bicolore)
-    for i in range(len(df_investissement) - 1):
-        color = couleur_francais if df_investissement['Différence'].iloc[i] >= 0 else couleur_etranger
-        fig.add_trace(go.Scatter(
-            x=df_investissement['Année'].iloc[i:i+2],
-            y=df_investissement['Différence_Abs'].iloc[i:i+2],
-            mode='lines',
-            line=dict(color=color, width=2),
-            showlegend=False,
-            hoverinfo='skip'
-        ))
 
     # Mettre à jour les paramètres du graphique
     fig.update_layout(
@@ -417,7 +417,7 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
         font-size: 20px; 
         font-weight: 700; 
         margin-top: -30px; 
-        margin-bottom: 20px; 
+        margin-bottom: 0px; 
         background-color: rgba(241, 216, 122, 0.3); 
         padding: 10px 15px; 
         border-radius: 10px;
