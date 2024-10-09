@@ -46,7 +46,7 @@ st.markdown("""
             
         .stSidebar .stHeading h2 {
             color: #16425B; /* Couleur du texte */
-            font-size: 120px; /* Taille de la police */
+            font-size: 20px; /* Taille de la police */
             font-weight: 700; /* Poids de la police */
             margin-top: -30px; /* Espace au-dessus */
             margin-bottom: 20px; /* Espace en dessous */
