@@ -137,20 +137,21 @@ st.markdown("""
         text-align: center;
         width: 100%;
         font-size: 14px !important;
-        font-weight: 400 !important;
-        color: #202021;
+        font-weight: 900 !important;
     }    
+            
     div[data-testid="stMetric"] div[data-testid="stMetricValue"] {
         text-align: center;
         font-size: 40px !important;
-        font-weight: 700 !important;
+        font-weight: 600 !important;
         color: #16425B;
     }
+            
     div[data-testid="stMetric"] {
         background-color: #FBFBFB;
         border: 3px solid #CBA325;
         box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);
-        border-radius: 10px;
+        border-radius: 15px;
         padding: 10px;
     }      
 
@@ -160,7 +161,7 @@ st.markdown("""
 
     div[data-testid="stMetric"]:hover {
         transform: scale(1.05); /* Zoom de 5% */
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Optionnel : ajouter une ombre pour accentuer l'effet */
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5); /* Optionnel : ajouter une ombre pour accentuer l'effet */
     }
     </style>
 """, unsafe_allow_html=True)
