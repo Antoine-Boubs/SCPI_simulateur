@@ -545,16 +545,16 @@ def main():
 
         
         with col1:
-            st.metric("Loyer Mensuel", f"{revenu_mensuel:.0f}€")
+            st.metric("Revenu Mensuel", f"{revenu_mensuel:.0f}€", help='Revenus perçus à la fin de votre investissment. Il devrait augmenter avec le temps.')
 
         with col2:
-             st.metric("Effort Mensuel", f"{effort_mensuel_moyen:.0f}€", help='Apport non inclus dans le calcul')
+             st.metric("Effort Mensuel", f"{effort_mensuel_moyen:.0f}€", help='Apport non inclus dans le calcul. Effort net moyen pendant votre investissement, donc fiscalité incluse.')
                 
         with col3:
-            st.metric("Rendement Brut", f"{rendement_brut:.2f}%")
+            st.metric("Rentabilité Brut", f"{rendement_brut:.2f}%", help='Avec 0 fiscalité')
 
         with col4:
-            st.metric("Rendement Net", f"{rendement_net:.2f}%")
+            st.metric("Rentabilité Nette", f"{rendement_net:.2f}%", help='Rentabilité de votre investissement : ce que vous percevez au terme / ce que vous avez investi (mensualités et impôts compris)')
 
         st.markdown(
             """

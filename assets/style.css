@@ -140,10 +140,18 @@ p {
     }
 
     div[data-testid="stMetric"] p {
-        font-size: 16px !important;
+        font-size: 14px !important;
         font-weight: 400 !important;
-        text-align: center;
         color: #CBA325;
+    }
+
+    .stMetric label {
+        justify-content: right;
+    }
+
+    label[data-testid="stMetricLabel"] {
+        text-align: center;
+        justify-content: center;
     }
 
     div[data-testid="stMetricValue"] {
