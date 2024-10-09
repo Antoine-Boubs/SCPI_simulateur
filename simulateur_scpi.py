@@ -32,33 +32,27 @@ st.markdown(f"""
 
 st.markdown("""
     <style>
-        div[data-baseweb="tab-border"][role="presentation"] {
-            border: 1px solid #16425B; 
-            border-radius: 5px;
-            margin: 10px;
-        }
+        
             
         [data-baseweb="tab"] {
-            background-color: #F1D89E; /* Couleur de fond */
+            background-color: rgba(141, 179, 197, 0.5); 
             border-radius: 10px;
-            color: #16425B; /* Couleur du texte */
+            color: #16425B; 
             padding: 10px 20px; /* Espacement intérieur */
             margin: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre */
             font-weight: 700; /* Mettre le texte en gras */
         }
 
-        /* Style pour les onglets non sélectionnés */
         [data-baseweb="tab"]:not([aria-selected="true"]) {
-            background-color: #FBFBFB; /* Couleur de fond pour les onglets non sélectionnés */
-            color: #202021; /* Couleur du texte pour les onglets non sélectionnés */
-            box-shadow: none;
-            font-weight: 400; /* Poids de la police normal */
+            background-color: #FBFBFB; 
+            color: #202021; 
+            box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);;
+            font-weight: 400; 
         }
 
-        /* Effet de survol pour les onglets */
         [data-baseweb="tab"]:hover {
-            background-color: #CBA325; /* Couleur de survol */
+            background-color: rgba(141, 179, 197, 0.2); 
             color: #202021;
             cursor: pointer;
         }
@@ -68,6 +62,13 @@ st.markdown("""
             height: 3px;
             border-radius: 2px;
         }
+            
+        div[data-baseweb="tab-border"][role="presentation"] {
+            border: 1px solid #16425B; 
+            border-radius: 5px;
+            margin: 10px;
+        }
+            
             
         .stSidebar .stHeading h2 {
             color: #16425B; 
@@ -627,7 +628,7 @@ def main():
             }
             </style>
             <div class="custom-box">
-                L'investissement en SCPI a pour fonction première la <strong>distribution de revenus complémentaires</strong> à une échéance donnée. Le but n'est pas la revente à court, moyen, moyen-long terme.
+                L'investissement en SCPI a pour fonction première la <strong>distribution de revenus complémentaires</strong> à une échéance donnée. <strong>L'objectif' n'est pas la revente</strong> à court, moyen, moyen-long terme.
             </div>
             """,
             unsafe_allow_html=True
