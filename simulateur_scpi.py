@@ -437,6 +437,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
     couleur_valeur_revente = '#10505B'
     couleur_effort_annuel = '#D56844'
     couleur_point_sortie = '#CBA325'
+    couleur_capital_restant_aire = 'rgba(232, 176, 170, 0.3)'
 
     df_amortissement_annuel = df_amortissement.groupby(df_amortissement.index // 12).last()
     df_amortissement_annuel.index = np.arange(1, len(df_amortissement_annuel) + 1)
@@ -456,6 +457,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
     duree_max = duree_pret // 12
     x_range = np.arange(1, duree_max + 1)
 
+    # Capital Restant
     fig.add_trace(go.Scatter(
         x=x_range, 
         y=df_amortissement_annuel['Capital Restant'][:duree_max], 
@@ -465,8 +467,10 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         marker=dict(size=6, color='white', line=dict(color=couleur_capital_restant, width=2)),
         hovertemplate='<span style="color:' + couleur_capital_restant + ';">●</span> Capital Restant <br>Montant: <b>%{y:.0f} €</b><extra></extra>',
         fill='tozeroy',
-        fillcolor="#E8B0AA"
+        fillcolor=couleur_capital_restant_aire
     ))
+
+    # Valeur de Revente
     fig.add_trace(go.Scatter(
         x=x_range, 
         y=df_investissement['Valeur de Revente'][:duree_max], 
@@ -476,6 +480,8 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         marker=dict(size=6, color='white', line=dict(color=couleur_valeur_revente, width=2)),
         hovertemplate='<span style="color:' + couleur_valeur_revente + ';">●</span> Valeur de Revente <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
     ))
+
+    # Effort Net Cumulé
     fig.add_trace(go.Scatter(
         x=x_range, 
         y=df_investissement['Effort Net Cumulé'][:duree_max], 
@@ -485,12 +491,6 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         marker=dict(size=6, color='white', line=dict(color=couleur_effort_annuel, width=2)),
         hovertemplate='<span style="color:' + couleur_effort_annuel + ';">●</span> Effort Net Cumulé <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
     ))
-
-    # Ajustement des limites des axes
-    fig.update_layout(
-        xaxis=dict(range=[1, duree_max]),
-        yaxis=dict(range=[0, max(df_amortissement_annuel['Capital Restant'].max(), df_investissement['Valeur de Revente'].max()) + 20000])
-    )
 
     # Ajouter la ligne et le point de sortie s'il y a un point de sortie
     if annee_sortie:
@@ -514,32 +514,10 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             hoverinfo='skip'
         ))
 
-        fig.add_annotation(
-            x=annee_sortie,
-            y=df_investissement.loc[df_investissement['Année'] == annee_sortie, 'Valeur de Revente'].values[0],
-            text=f"Sortie neutre<br>(Année {annee_sortie})",
-            showarrow=True,
-            arrowhead=2,
-            arrowsize=1,
-            arrowwidth=2,
-            arrowcolor=couleur_point_sortie,
-            ax=0,
-            ay=-40,
-            bgcolor='#16425B',
-            font=dict(color="#FBFBFB", size=12),
-            bordercolor=couleur_point_sortie,
-            borderwidth=2,
-            borderpad=4,
-            opacity=0.8
-        )
-
-        # Mettre à jour la mise en page
-        fig.update_layout(
+    # Mettre à jour la mise en page
+    fig.update_layout(
         title=dict(
-            text='<b>La vie de votre investissement</b>',
-            font=dict(family="Inter", size=24, color="#16425B"),
-            x=0.5,
-            xanchor='center'
+            text='',  # Désactiver le titre pour ajouter un titre personnalisé séparé
         ),
         xaxis=dict(
             title="<b>Années</b>",
@@ -570,13 +548,13 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         font=dict(family="Inter", size=14),
         height=600,
         width=1000,
-        margin=dict(t=60, b=60, l=60, r=60),  # Gardez les marges symétriques pour centrer le graphique
+        margin=dict(t=60, b=60, l=60, r=60),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         legend=dict(
             orientation="h",
             yanchor="bottom",
-            y=-0.3,  # Déplacer la légende un peu plus bas si nécessaire
+            y=1.02,
             xanchor="center",
             x=0.5,
             bgcolor='rgba(0,0,0,0)',
@@ -587,9 +565,26 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         )
     )
 
+    # Ajouter le titre en tant qu'élément séparé
+    st.markdown("""
+    <h2 style='
+        text-align: center; 
+        color: #16425B; 
+        font-size: 20px; 
+        font-weight: 700; 
+        margin-top: 30px; 
+        margin-bottom: 0px; 
+        background-color: rgba(232, 176, 170, 0.2); 
+        padding: 20px 15px; 
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        '> La vie de votre investissement
+    </h2>
+    """, unsafe_allow_html=True)
 
     # Afficher le graphique
     st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
+
 
 
 
