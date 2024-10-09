@@ -579,71 +579,71 @@ def main():
         rendement_net = (loyer_net_apres_pret / effort_net_total) * 100
 
         st.markdown('<div class="custom-card-1">', unsafe_allow_html=True)
-    st.metric(label="Loyer Mensuel", value=f"{revenu_mensuel:.0f}€")
-    st.markdown('</div>', unsafe_allow_html=True)
+        st.metric(label="Loyer Mensuel", value=f"{revenu_mensuel:.0f}€")
+        st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="custom-card-2">', unsafe_allow_html=True)
-    st.metric(label="Effort Mensuel", value=f"{effort_mensuel_moyen:.0f}€")
-    st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown('<div class="custom-card-2">', unsafe_allow_html=True)
+        st.metric(label="Effort Mensuel", value=f"{effort_mensuel_moyen:.0f}€")
+        st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="custom-card-3">', unsafe_allow_html=True)
-    st.metric(label="Rendement Brut", value=f"{rendement_brut:.2f}%")
-    st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown('<div class="custom-card-3">', unsafe_allow_html=True)
+        st.metric(label="Rendement Brut", value=f"{rendement_brut:.2f}%")
+        st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="custom-card-4">', unsafe_allow_html=True)
-    st.metric(label="Rendement Net", value=f"{rendement_net:.2f}%")
-    st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown('<div class="custom-card-4">', unsafe_allow_html=True)
+        st.metric(label="Rendement Net", value=f"{rendement_net:.2f}%")
+        st.markdown('</div>', unsafe_allow_html=True)
 
-    # CSS Metric
-    st.markdown("""
-        <style>
-        .custom-card-1 .stMetric {
-            background-color: #F1D89E;
-            border-color: #16425B;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
+        # CSS Metric
+        st.markdown("""
+            <style>
+            .custom-card-1 .stMetric {
+                background-color: #F1D89E;
+                border-color: #16425B;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
 
-        .custom-card-2 .stMetric {
-            background-color: #E8B0AA;
-            border-color: #D56844;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
+            .custom-card-2 .stMetric {
+                background-color: #E8B0AA;
+                border-color: #D56844;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
 
-        .custom-card-3 .stMetric {
-            background-color: #AFC6DC;
-            border-color: #CBA325;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
+            .custom-card-3 .stMetric {
+                background-color: #AFC6DC;
+                border-color: #CBA325;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
 
-        .custom-card-4 .stMetric {
-            background-color: #E8FEE8;
-            border-color: #10505B;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        </style>
-        """, unsafe_allow_html=True)
+            .custom-card-4 .stMetric {
+                background-color: #E8FEE8;
+                border-color: #10505B;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
+            </style>
+            """, unsafe_allow_html=True)
 
-        
-    with col1:
-        st.metric("Loyer Mensuel", f"{revenu_mensuel:.0f}€")
-
-    with col2:
-            st.metric("Effort Mensuel", f"{effort_mensuel_moyen:.0f}€", help='Apport non inclus dans le calcul')
             
-    with col3:
-        st.metric("Rendement Brut", f"{rendement_brut:.2f}%")
+        with col1:
+            st.metric("Loyer Mensuel", f"{revenu_mensuel:.0f}€")
 
-    with col4:
-        st.metric("Rendement Net", f"{rendement_net:.2f}%")
+        with col2:
+                st.metric("Effort Mensuel", f"{effort_mensuel_moyen:.0f}€", help='Apport non inclus dans le calcul')
+                
+        with col3:
+            st.metric("Rendement Brut", f"{rendement_brut:.2f}%")
+
+        with col4:
+            st.metric("Rendement Net", f"{rendement_net:.2f}%")
 
 
-    plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
+        plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
 
-    graphique_loyers_francais_vs_etrangers(df_investissement)
+        graphique_loyers_francais_vs_etrangers(df_investissement)
         
 
             
