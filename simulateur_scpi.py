@@ -303,8 +303,8 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
     couleur_francais_aire = 'rgba(141, 179, 197, 0.3)' 
     couleur_etranger = '#CBA325' 
     couleur_etranger_aire = 'rgba(241, 216, 122, 0.5)'
-    couleur_somme = '#10505B'  # Couleur pour les revenus totaux
-    couleur_somme_aire = 'rgba(220, 243, 234, 0.5)'  # Couleur pour l'aire des revenus totaux
+    couleur_somme = '#ACADAF'  
+    couleur_somme_aire = 'rgba(208, 209, 211, 0.5)'  
 
     # Calculer la différence et sa valeur absolue
     df_investissement['Différence'] = df_investissement['Loyer Net Français'] - df_investissement['Loyer Net Étranger']
