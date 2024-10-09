@@ -174,15 +174,15 @@ st.markdown("""
         transition: all 0.3s ease;
     }
             
-    div[data-testid="stSlider"], div[data-testid="stNumberInput"], div[data-testid="stCheckbox"], div[data-testid="stSelectbox"]:hover {
+    div[data-testid="stSlider"]:hover, div[data-testid="stNumberInput"]:hover, div[data-testid="stCheckbox"]:hover, div[data-testid="stSelectbox"]:hover {
         transform: scale(1.04);
     }
             
-    div[data-testid="stSlider"], div[data-testid="stNumberInput"], div[data-testid="stCheckbox"], div[data-testid="stSelectbox"] p {
+    div[data-testid="stSlider"] p, div[data-testid="stNumberInput"] p, div[data-testid="stCheckbox"] p, div[data-testid="stSelectbox"] p {
         font-size: 14px;
         color: #202021;
         font-weight: 600;
-}
+    }
     </style>
 """, unsafe_allow_html=True)
 
