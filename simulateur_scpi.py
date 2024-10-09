@@ -18,7 +18,11 @@ st.set_page_config(
 # MAIN APP
 st.markdown("""
     <style>
-    
+    [data-testid="stSidebar"] > div:first-child {
+        background: radial-gradient(circle, #EAEAEA, #FBFBFB);
+        border-right: 2px solid #CBA325;
+    }
+            
     /* StSlider */
 
     div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label StSlider */
@@ -97,7 +101,7 @@ st.markdown("""
     }
 
     [data-baseweb="slider"] > div:first-of-type > div:first-child {
-    background-color: #8DB3C5 !important; /* Couleur dorée pour la partie avant le curseur */
+    background-color: #8DB3C5 !important; /* après le curseur */
     height: 6px; /* Ajuste la hauteur si nécessaire */
     }       
 
