@@ -32,8 +32,6 @@ st.markdown(f"""
 
 st.markdown("""
     <style>
-        
-            
         [data-baseweb="tab"] {
             background-color: rgba(141, 179, 197, 0.5); 
             border-radius: 10px;
@@ -58,13 +56,13 @@ st.markdown("""
         }
 
         [data-baseweb="tab-highlight"] {
-            background-color: #CBA325;
+            background-color: #8DB3C5;
             height: 3px;
             border-radius: 2px;
         }
             
         div[data-baseweb="tab-border"][role="presentation"] {
-            border: 1px solid #16425B; 
+            border: 1px solid #CBA325; 
             border-radius: 5px;
             margin: 10px;
         }
