@@ -573,10 +573,12 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         legend=dict(
             orientation="h",
             yanchor="bottom",
-            y=-0.5,
+            y=-0.2,
             xanchor="center",
             x=0.5,
-            bgcolor='rgba(241, 216, 122, 0.3)',
+            bgcolor='rgba(0,0,0,0)',
+            bordercolor='rgba(0, 0, 0, 0.2)',    # Bordure légèrement foncée pour simuler une ombre
+            borderwidth=2,
             traceorder="normal",
             font=dict(size=10),
             itemsizing="constant",
