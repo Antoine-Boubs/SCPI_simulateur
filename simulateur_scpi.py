@@ -146,7 +146,6 @@ st.markdown("""
     }
 
     div[data-testid="stMetric"] p {  
-        text-align: center;
         font-size: 16px !important;
         font-weight: 400 !important;
         color: #CBA325;
@@ -159,11 +158,8 @@ st.markdown("""
         color: #16425B;
     }
     
-    div[data-testid="stMetric"] label { 
+    div[data-testid="stMetric"]  { 
         text-align: center;
-        font-size: 40px !important;
-        font-weight: 600 !important;
-        color: #D56844;
         display: flex;
         justify-content: center;
         text-align: center;
