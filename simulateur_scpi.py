@@ -581,6 +581,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             font=dict(size=10),
             itemsizing="constant",
             itemwidth=50,
+            width=3
         )
     )
 
