@@ -19,7 +19,7 @@ st.set_page_config(
 st.markdown("""
     <style>
     [data-testid="stSidebar"] > div:first-child {
-        background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
+        background: #FBFBFB;
         border-right: 2px solid #CBA325;
         border-radius: 20px
         box-shadow: 
