@@ -565,10 +565,10 @@ def main():
                         font-weight: 500;
                         padding: 20px; 
                         border-radius: 15px;
-                        margin-top: -10px; 
+                        margin-top: 10px; 
                         margin-bottom: 20px; 
                         box-shadow: 0 4px 8px rgba(232, 176, 170, 0.3), 0 6px 20px rgba(232, 176, 170, 0.15);
-
+                        border: 2px solid #A33432;
                     }
                     </style>
                     <div class="custom-box-disclaimer">
@@ -588,8 +588,8 @@ def main():
                         font-weight: 500;
                         padding: 20px; 
                         border-radius: 15px;
-                        margin-top: -10px; 
-                        margin-bottom: 20px; 
+                        margin-top: -5px; 
+                        margin-bottom: 50px; 
                         box-shadow: 0 4px 10px rgba(251, 233, 186, 0.6);
                     }
                     </style>
@@ -610,8 +610,8 @@ def main():
                 font-weight: 500;
                 padding: 20px; 
                 border-radius: 15px;
-                margin-top: 10px; 
-                margin-bottom: 20px; 
+                margin-top: -5px; 
+                margin-bottom: 50px; 
                 box-shadow: 0 4px 8px rgba(152, 153, 195, 0.3), 0 6px 20px rgba(152, 153, 195, 0.15);
             }
             </style>
