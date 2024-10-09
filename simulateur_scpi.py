@@ -38,9 +38,7 @@ st.markdown("""
         justify-content: center;
         text-align: left;
         width: 100%;
-        font-size: 13px !important;
-        font-weight: 900 !important;
-        color:#202021;
+        
         margin-bottom: 0px;
     }
 
