@@ -32,15 +32,14 @@ st.markdown(f"""
 
 # CSS
 st.markdown("""
-    <style>
-   /* Styles de base pour les écrans normaux */
+<style>
     .title-container {
         text-align: center;
         padding: 30px;
-        border: 2px solid #CBA328;
+        border: 2px solid #CBA328; /* Couleur de la bordure */
         border-radius: 15px;
-        background-color: #F8F9FB;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        background-color: #F1D89E; /* Couleur de fond */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre */
         margin: -10px auto;
         position: relative;
         max-width: 800px;
@@ -49,7 +48,7 @@ st.markdown("""
     .main-title {
         font-size: 36px;
         font-weight: 800;
-        background: linear-gradient(90deg, #16425B, #8DB3C5);
+        background: linear-gradient(90deg, #16425B, #8DB3C5); /* Dégradé de couleurs pour le texte */
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-bottom: 10px;
@@ -57,14 +56,14 @@ st.markdown("""
 
     .subtitle {
         font-size: 18px;
-        color: #8DB3C5;
+        color: #8DB3C5; 
         margin-bottom: 20px;
-        font-weight: 500;
+        font-weight: 600;
     }
 
     .separator {
         height: 2px;
-        background-color: #CBA328;
+        background-color: #CBA325;
         width: 50%;
         margin: 0 auto 20px auto;
     }
@@ -74,22 +73,22 @@ st.markdown("""
         justify-content: space-between;
         align-items: center;
         font-size: 14px;
-        color: #6C757D;
+        color: #202021; 
         font-style: italic;
         margin-top: 20px;
     }
 
     .author-info {
         font-weight: 600;
-        color: #CBA328;
+        color: #CBA328; 
     }
 
     .update-info:hover, .author-info:hover {
-        text-decoration: underline;
         cursor: pointer;
+        transform: scale(1.05);
     }
 
-/* Styles pour les écrans mobiles */
+
 @media (max-width: 768px) {
     .title-container {
         padding: 20px;
@@ -116,9 +115,7 @@ st.markdown("""
     .update-info, .author-info {
         margin-top: 10px;
     }
-
-
-            
+                  
     [data-testid="stSidebar"] > div:first-child {
         background: #DCF3EA; 
         border-radius: 15px; 
