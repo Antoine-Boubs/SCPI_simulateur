@@ -502,7 +502,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             y1=1,
             xref='x',
             yref='paper',
-            line=dict(color=couleur_point_sortie, width=3, dash="solid")
+            line=dict(color=couleur_point_sortie, width=2, dash="dash")
         )
         
         fig.add_trace(go.Scatter(
@@ -629,9 +629,10 @@ def main():
             .custom-box {
                 background-color: rgba(232, 176, 170, 0.5); 
                 color: #A33432;
-                font-weight: 600
+                font-weight: 600;
                 padding: 20px; 
-                border-radius: 15px; 
+                border-radius: 15px;
+                margin-top: 20px; 
                 margin-bottom: 20px; 
                 box-shadow: 0 4px 8px rgba(232, 176, 170, 1);
             }
