@@ -216,7 +216,7 @@ st.markdown("""
         background-color: rgba(141, 179, 197, 0.2);
         padding: 10px 15px;
         border-radius: 15px;
-        min-width: 80px;
+        min-width: 60px;
     }
 
     div[role="radiogroup"] label:first-of-type {
