@@ -503,7 +503,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
 
     fig.update_layout(
         title=dict(
-            text='<b>Évolution de votre investissement</b>',
+            text='<b>La vie de votre investissement</b>',
             font=dict(family="Inter", size=24, color="#16425B"),
             x=0.5,
             xanchor='center',
@@ -548,8 +548,6 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             xanchor="center",
             x=0.5,
             bgcolor='rgba(255,255,255,0.8)',
-            bordercolor="#CBA325",
-            borderwidth=3,
             traceorder="normal",
             font=dict(size=10),
             itemsizing="constant",
