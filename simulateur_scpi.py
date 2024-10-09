@@ -216,15 +216,15 @@ st.markdown("""
         background-color: rgba(141, 179, 197, 0.2);
         padding: 10px 15px;
         border-radius: 15px;
-        min-width: 60px;
+        min-width: 60%;
     }
 
     div[role="radiogroup"] label:first-of-type {
-        margin-left: 20px; /* Déplace "Avant" un peu plus à gauche */
+        margin-left: 30px; /* Déplace "Avant" un peu plus à gauche */
     }
 
     div[role="radiogroup"] label:last-of-type {
-        margin-right: 20px; /* Déplace "Après" un peu plus à droite */
+        margin-right: 30px; /* Déplace "Après" un peu plus à droite */
     }
     
     div[role="radiogroup"] p {
