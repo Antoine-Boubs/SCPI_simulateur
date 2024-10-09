@@ -231,7 +231,7 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
     couleur_francais = '#16425B' 
     couleur_francais_aire = 'rgba(141, 179, 197, 0.3)' 
     couleur_etranger = '#CBA325' 
-    couleur_etranger_aire = 'rgba(241, 216, 122, 0.3)'
+    couleur_etranger_aire = 'rgba(241, 216, 122, 0.5)'
 
     # Calculer la différence et sa valeur absolue
     df_investissement['Différence'] = df_investissement['Loyer Net Français'] - df_investissement['Loyer Net Étranger']
@@ -479,7 +479,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         fig.add_annotation(
             x=annee_sortie,
             y=df_investissement.loc[df_investissement['Année'] == annee_sortie, 'Valeur de Revente'].values[0],
-            text=f"Point de sortie sans perte<br>(Année {annee_sortie})",
+            text=f"Sortie neutre<br>(Année {annee_sortie})",
             showarrow=True,
             arrowhead=2,
             arrowsize=1,
@@ -554,24 +554,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             font=dict(size=10),
             itemsizing="constant",
             itemwidth=40,
-        ),
-        shapes=[
-            dict(
-                type="rect",
-                xref="paper",
-                yref="paper",
-                x0=0,
-                y0=0,
-                x1=1,
-                y1=1,
-                line=dict(
-                    color="#16425B",
-                    width=2,
-                    dash="solid",
-                ),
-                fillcolor="rgba(0,0,0,0)"
-            ),
-        ]
+        )
     )
 
     # Afficher le graphique
