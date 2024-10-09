@@ -128,19 +128,11 @@ st.markdown("""
             0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
     }
             
-    div[data-testid="stSlider"; "stInputNumber"] {
+   div[data-testid="stSlider"], div[data-testid="stInputNumber"] {
         background-color: #FBFBFB;
-        border: 2px solid #16425B;
-        box-shadow: box-shadow: 
-            0 4px 8px rgba(141, 179, 197, 0.2), /* Couleur #8DB3C5 avec opacité 0.2 */
-            0 8px 16px rgba(22, 66, 91, 0.2),  /* Couleur #16425B avec opacité 0.2 */
-            0 16px 32px rgba(141, 179, 197, 0.3), /* Couleur #8DB3C5 avec opacité 0.3 */
-            0 32px 64px rgba(22, 66, 91, 0.3); /* Couleur #16425B avec opacité 0.3 */;
-        border-radius: 15px;
-        padding: 15px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        border: 2px solid #CBA328;
     }
+
     </style>
 """, unsafe_allow_html=True)
 
