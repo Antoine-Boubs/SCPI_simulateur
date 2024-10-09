@@ -47,7 +47,7 @@ def input_simulateur():
             duree_differe = st.slider("⏲️ Durée différé (mois)", 0, 12, 9) if type_differe != 'Sans différé' else 0
         
         with st.container():
-            frais_courtage = st.number_input("💵 Frais courtage / dossier (€)", 0, 10000, 2250, 250)
+            frais_courtage = st.number_input("💵 Frais courtage / dossier (€)", 0, 10000, 0, 250)
             if frais_courtage > 0:
                 inclus_financement = st.checkbox("Inclus dans le financement ?", help='Les frais de dossiers / courtage sont-ils inclus dans votre financement ?')
             else:
@@ -235,10 +235,14 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
     couleur_francais_aire = 'rgba(141, 179, 197, 0.3)' 
     couleur_etranger = '#CBA325' 
     couleur_etranger_aire = 'rgba(241, 216, 122, 0.5)'
+    couleur_somme = '#FF5733'  # Couleur pour la somme des loyers
 
     # Calculer la différence et sa valeur absolue
     df_investissement['Différence'] = df_investissement['Loyer Net Français'] - df_investissement['Loyer Net Étranger']
     df_investissement['Différence_Abs'] = np.abs(df_investissement['Différence'])
+
+    # Calculer la somme des deux loyers
+    df_investissement['Somme Loyers'] = df_investissement['Loyer Net Français'] + df_investissement['Loyer Net Étranger']
 
     fig = go.Figure()
 
@@ -264,6 +268,16 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
         fill='tozeroy',
         fillcolor=couleur_etranger_aire,
         hovertemplate='<span style="color:' + couleur_etranger + ';">●</span> Loyer Étranger <br> Montant: <b>%{y:.0f} €</b><extra></extra>'
+    ))
+
+    # Somme des loyers
+    fig.add_trace(go.Scatter(
+        x=df_investissement['Année'],
+        y=df_investissement['Somme Loyers'],
+        name='Somme des Loyers',
+        mode='lines',
+        line=dict(color=couleur_somme, width=2, dash='dash'),  # Ligne en pointillés
+        hovertemplate='<span style="color:' + couleur_somme + ';">●</span> Somme des Loyers <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
     ))
 
     # Différence (valeur absolue) avec changement de couleur
@@ -293,6 +307,7 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
     # Calculer le maximum pour l'axe y et arrondir au multiple de 1000 supérieur
     y_max = max(df_investissement['Loyer Net Français'].max(),
                 df_investissement['Loyer Net Étranger'].max(),
+                df_investissement['Somme Loyers'].max(),
                 df_investissement['Différence_Abs'].max())
     y_max_rounded = np.ceil(y_max / 1000) * 1000
 
@@ -546,10 +561,10 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         plot_bgcolor='rgba(0,0,0,0)',
         legend=dict(
             orientation="h",
-            yanchor="bottom",
-            y=1.02,
-            xanchor="center",
-            x=0.5,
+            yanchor="middle",
+            y=0.5,
+            xanchor="right",
+            x=1.03,
             bgcolor='rgba(255,255,255,0.8)',
             traceorder="normal",
             font=dict(size=10),
