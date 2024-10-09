@@ -149,9 +149,8 @@ p {
         justify-content: right;
     }
 
-    label[data-testid="stMetricLabel"] {
+    div[data-testid="stMetricLabel"] > div {
         text-align: center;
-        justify-content: center;
     }
 
     div[data-testid="stMetricValue"] {

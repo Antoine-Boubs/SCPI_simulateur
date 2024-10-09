@@ -583,7 +583,19 @@ def main():
         graphique_loyers_francais_vs_etrangers(df_investissement)
         st.markdown(
             """
-            <div class="custom-box">
+            <style>
+            .custom-box-revenus {
+                background: rgba(152, 153, 195, 0.3);                
+                color: #383D6D;
+                font-weight: 500;
+                padding: 20px; 
+                border-radius: 15px;
+                margin-top: -10px; 
+                margin-bottom: 20px; 
+                box-shadow: 0 4px 8px rgba(152, 153, 195, 0.3), 0 6px 20px rgba(152, 153, 195, 0.15);
+            }
+            </style>
+            <div class="custom-box-revenus">
                 Ce sont vos revenus <strong>net de fiscalité.  <br>Les loyers français bénéficient de la déduction des intérêts d'emprunts</strong> pendant la période de financement.
             </div>
             """,
