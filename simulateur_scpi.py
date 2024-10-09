@@ -44,6 +44,9 @@ st.markdown("""
             margin: 5px; /* Espace entre les onglets */
         }
 
+        div[data-testid="stTab"] p {
+            font-size: 8px; /* Taille du texte */
+            font-weight: 100;
             
         div [data-baseweb="tab"] {
             background-color: #E8F0F2;
@@ -394,8 +397,8 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
             linecolor='#CBA325',
         ),
         font=dict(family="Inter", size=14),
-        height=500,
-        width=1000,
+        height=600,
+        width=1200,
         margin=dict(t=60, b=60, l=60, r=60),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
@@ -428,8 +431,6 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
 
     # Afficher le graphique
     st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
-
-
 
 def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
     # Définition des couleurs
@@ -504,15 +505,6 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             yref='paper',
             line=dict(color=couleur_point_sortie, width=2, dash="dash")
         )
-        
-        fig.add_trace(go.Scatter(
-            x=[annee_sortie],
-            y=[df_investissement.loc[df_investissement['Année'] == annee_sortie, 'Valeur de Revente'].values[0]],
-            mode='markers',
-            marker=dict(symbol='star', size=16, color=couleur_point_sortie, line=dict(width=2, color='#16425B')),
-            name='Point de sortie',
-            hoverinfo='skip'
-        ))
 
     # Mettre à jour la mise en page
     fig.update_layout(
@@ -584,8 +576,6 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
 
     # Afficher le graphique
     st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
-
-
 
 
 def main():    
