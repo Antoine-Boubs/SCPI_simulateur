@@ -578,22 +578,6 @@ def main():
         loyer_net_apres_pret = loyer_apres_pret - impot_apres_pret
         rendement_net = (loyer_net_apres_pret / effort_net_total) * 100
 
-        st.markdown('<div class="custom-card-1">', unsafe_allow_html=True)
-        st.metric(label="Loyer Mensuel", value=f"{revenu_mensuel:.0f}€")
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        st.markdown('<div class="custom-card-2">', unsafe_allow_html=True)
-        st.metric(label="Effort Mensuel", value=f"{effort_mensuel_moyen:.0f}€")
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        st.markdown('<div class="custom-card-3">', unsafe_allow_html=True)
-        st.metric(label="Rendement Brut", value=f"{rendement_brut:.2f}%")
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        st.markdown('<div class="custom-card-4">', unsafe_allow_html=True)
-        st.metric(label="Rendement Net", value=f"{rendement_net:.2f}%")
-        st.markdown('</div>', unsafe_allow_html=True)
-
         # CSS Metric
         st.markdown("""
             <style>
@@ -626,6 +610,24 @@ def main():
             }
             </style>
             """, unsafe_allow_html=True)
+
+        st.markdown('<div class="custom-card-1">', unsafe_allow_html=True)
+        st.metric(label="Loyer Mensuel", value=f"{revenu_mensuel:.0f}€")
+        st.markdown('</div>', unsafe_allow_html=True)
+
+        st.markdown('<div class="custom-card-2">', unsafe_allow_html=True)
+        st.metric(label="Effort Mensuel", value=f"{effort_mensuel_moyen:.0f}€")
+        st.markdown('</div>', unsafe_allow_html=True)
+
+        st.markdown('<div class="custom-card-3">', unsafe_allow_html=True)
+        st.metric(label="Rendement Brut", value=f"{rendement_brut:.2f}%")
+        st.markdown('</div>', unsafe_allow_html=True)
+
+        st.markdown('<div class="custom-card-4">', unsafe_allow_html=True)
+        st.metric(label="Rendement Net", value=f"{rendement_net:.2f}%")
+        st.markdown('</div>', unsafe_allow_html=True)
+
+        
 
             
         with col1:
