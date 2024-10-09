@@ -494,8 +494,8 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             opacity=0.8
         )
 
-    # Mettre à jour la mise en page
-    fig.update_layout(
+        # Mettre à jour la mise en page
+        fig.update_layout(
         title=dict(
             text='<b>La vie de votre investissement</b>',
             font=dict(family="Inter", size=24, color="#16425B"),
@@ -531,13 +531,13 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
         font=dict(family="Inter", size=14),
         height=600,
         width=1000,
-        margin=dict(t=60, b=60, l=60, r=60),
+        margin=dict(t=60, b=60, l=60, r=60),  # Gardez les marges symétriques pour centrer le graphique
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         legend=dict(
             orientation="h",
             yanchor="bottom",
-            y=-0.2,
+            y=-0.3,  # Déplacer la légende un peu plus bas si nécessaire
             xanchor="center",
             x=0.5,
             bgcolor='rgba(0,0,0,0)',
@@ -547,6 +547,7 @@ def plot_amortissement(df_amortissement, df_investissement, duree_pret, apport):
             itemwidth=40,
         )
     )
+
 
     # Afficher le graphique
     st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
