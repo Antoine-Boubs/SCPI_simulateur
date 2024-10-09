@@ -93,11 +93,11 @@ st.markdown("""
 
     [role="slider"] {
     background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
-    height: 12px;
+    height: 14px;
     }
 
     [data-baseweb="slider"] > div:first-of-type > div:first-child {
-    background-color: #AFC6DC !important; /* Couleur dorée pour la partie avant le curseur */
+    background-color: #8DB3C5 !important; /* Couleur dorée pour la partie avant le curseur */
     height: 8px; /* Ajuste la hauteur si nécessaire */
     }       
                 
