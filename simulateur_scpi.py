@@ -636,8 +636,6 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
             xanchor="center",
             x=0.5,
             bgcolor='rgba(255,255,255,1)',
-            bordercolor = '#cba325',
-            borderwidth = 3
         ),
         hovermode="x unified",
         # Ajout du cadre autour du graphique
