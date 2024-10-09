@@ -154,7 +154,7 @@ st.markdown("""
     }      
 
     div[data-testid="stMetric"] {
-        transition: transform 0.3s ease; /* Transition douce */
+        transition: transform 0.5s ease; /* Transition douce */
     }
 
     div[data-testid="stMetric"]:hover {
@@ -171,12 +171,17 @@ st.markdown("""
         padding: 15px;
         margin-top: 10px;
         margin-bottom: 10px;
+        transition: all 0.3s ease;
     }
-
-    div[data-testid="stSlider"] p {
-        font-size: 24px;
-        color: #CBA328;
-        font-weight: bold;
+            
+    div[data-testid="stSlider"], div[data-testid="stNumberInput"], div[data-testid="stCheckbox"], div[data-testid="stSelectbox"]:hover {
+        transform: scale(1.04);
+    }
+            
+    div[data-testid="stSlider"], div[data-testid="stNumberInput"], div[data-testid="stCheckbox"], div[data-testid="stSelectbox"] p {
+        font-size: 14px;
+        color: #202021;
+        font-weight: 600;
 }
     </style>
 """, unsafe_allow_html=True)
