@@ -19,8 +19,9 @@ st.set_page_config(
 st.markdown("""
     <style>
     [data-testid="stSidebar"] > div:first-child {
-        background: radial-gradient(circle, #8DB3C5, #FBFBFB);
+        background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
         border-right: 2px solid #CBA325;
+        border-radius: 20px
         box-shadow: 
             0 2px 4px rgba(22, 66, 91, 0.1),
             0 4px 8px rgba(22, 66, 91, 0.1),
