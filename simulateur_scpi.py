@@ -32,11 +32,10 @@ st.markdown("""
     <style>
    .title-container {
         text-align: center;
-        padding: 10px 20px;
+        padding: -10px 20px;
         border: 2px solid #CBA328;
         border-radius: 10px;
         margin: 10px 0;
-        position: relative;
     }
 
     .info-container {
