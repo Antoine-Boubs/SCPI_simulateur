@@ -31,6 +31,7 @@ st.markdown("""
             0 8px 16px rgba(22, 66, 91, 0.2),  /* Ombre douce et plus large */
             0 16px 32px rgba(22, 66, 91, 0.2), /* Ombre plus intense */
             0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
+        padding-top: 20px;
     }
             
     div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label StSlider */
@@ -40,6 +41,15 @@ st.markdown("""
         width: 100%;
         
         margin-bottom: 0px;
+    }
+    /* Couleur du texte pour les labels des sliders */
+    div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p {
+        color: #ff4b5c !important; /* Couleur rose par exemple */
+    }
+
+    /* Couleur du texte pour les labels des champs de saisie numérique */
+    div[data-testid="stNumberInput"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p {
+        color: #ff4b5c !important; /* Couleur rose par exemple */
     }
 
     div[data-testid="stSlider"] {
