@@ -91,14 +91,6 @@ st.markdown("""
     }
             
 
-
-    .stApp {
-        background: radial-gradient(circle, #FBFBFB, #EAEAEA);        
-        inset: 10px;
-        border-radius: 10px;
-        border: 2px solid #CBA325
-    }
-            
     [role="slider"] {
     background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
     }
