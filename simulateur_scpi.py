@@ -303,8 +303,8 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
     couleur_francais_aire = 'rgba(141, 179, 197, 0.3)' 
     couleur_etranger = '#CBA325' 
     couleur_etranger_aire = 'rgba(241, 216, 122, 0.5)'
-    couleur_somme = '#10505B'  # Couleur pour les revenus totaux
-    couleur_somme_aire = 'rgba(220, 243, 234, 0.5)'
+    couleur_somme = '#ACADAF'
+    couleur_somme_aire = 'rgba(208, 209, 211, 0.3)'
 
     # Calculer la différence et sa valeur absolue
     df_investissement['Différence'] = df_investissement['Loyer Net Français'] - df_investissement['Loyer Net Étranger']
@@ -314,18 +314,6 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
     df_investissement['Revenus Totaux'] = df_investissement['Loyer Net Français'] + df_investissement['Loyer Net Étranger']
 
     fig = go.Figure()
-
-    # Différence (ligne bicolore)
-    for i in range(len(df_investissement) - 1):
-        color = couleur_francais if df_investissement['Différence'].iloc[i] >= 0 else couleur_etranger
-        fig.add_trace(go.Scatter(
-            x=df_investissement['Année'].iloc[i:i+2],
-            y=df_investissement['Différence_Abs'].iloc[i:i+2],
-            mode='lines',
-            line=dict(color=color, width=2),
-            showlegend=False,
-            hoverinfo='skip'
-        ))
 
     # Revenus Totaux
     fig.add_trace(go.Scatter(
@@ -362,6 +350,18 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
         fillcolor=couleur_etranger_aire,
         hovertemplate='<span style="color:' + couleur_etranger + ';">●</span> Loyer Étranger <br>Montant: <b>%{y:.0f} €</b><extra></extra>'
     ))
+
+    # Différence (ligne bicolore)
+    for i in range(len(df_investissement) - 1):
+        color = couleur_francais if df_investissement['Différence'].iloc[i] >= 0 else couleur_etranger
+        fig.add_trace(go.Scatter(
+            x=df_investissement['Année'].iloc[i:i+2],
+            y=df_investissement['Différence_Abs'].iloc[i:i+2],
+            mode='lines',
+            line=dict(color=color, width=2),
+            showlegend=False,
+            hoverinfo='skip'
+        ))
 
     # Mettre à jour les paramètres du graphique
     fig.update_layout(
@@ -416,13 +416,13 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
         color: #16425B; 
         font-size: 20px; 
         font-weight: 700; 
-        margin-top: -30px; 
+        margin-top: 30px; 
         margin-bottom: 0px; 
-        background-color: rgba(241, 216, 122, 0.3); 
-        padding: 10px 15px; 
+        background-color: rgba(141, 179, 197, 0.4); 
+        padding: 20px 15px; 
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);'>
-        Vos revenus nets (Français vs Étranger)
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        '> Vos revenus nets (Français vs Étranger)
     </h2>
     """, unsafe_allow_html=True)
 
