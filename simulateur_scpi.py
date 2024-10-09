@@ -37,11 +37,36 @@ st.markdown("""
             border-radius: 5px;
             margin: 10px;
         }
-        div[data-baseweb="tab-highlight"] {
-            background-color: #CBA325; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-            height: 4px; 
+            
+        [data-baseweb="tab"] {
+            background-color: #F1D89E; /* Couleur de fond */
+            border-radius: 10px;
+            color: #16425B; /* Couleur du texte */
+            padding: 10px 20px; /* Espacement intérieur */
+            margin: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre */
+            font-weight: 700; /* Mettre le texte en gras */
+        }
+
+        /* Style pour les onglets non sélectionnés */
+        [data-baseweb="tab"]:not([aria-selected="true"]) {
+            background-color: #FBFBFB; /* Couleur de fond pour les onglets non sélectionnés */
+            color: #202021; /* Couleur du texte pour les onglets non sélectionnés */
+            box-shadow: none;
+            font-weight: 400; /* Poids de la police normal */
+        }
+
+        /* Effet de survol pour les onglets */
+        [data-baseweb="tab"]:hover {
+            background-color: #CBA325; /* Couleur de survol */
+            color: #202021;
+            cursor: pointer;
+        }
+
+        [data-baseweb="tab-highlight"] {
+            background-color: #CBA325;
+            height: 3px;
+            border-radius: 2px;
         }
             
         .stSidebar .stHeading h2 {
@@ -55,10 +80,6 @@ st.markdown("""
             padding: 10px 15px; /* Ajouter du padding pour l'espacement */
             border-radius: 10px; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        st.metric(label="Loyer Mensuel", value=f"{revenu_mensuel:.0f}€") {
-            background: #8DB3C5
         }
     </style>
 """, unsafe_allow_html=True)
@@ -593,6 +614,24 @@ def main():
         with col4:
             st.metric("Rendement Net", f"{rendement_net:.2f}%")
 
+        st.markdown(
+            """
+            <style>
+            .custom-box {
+                background-color: #F8D7DA; /* Couleur de fond rose clair */
+                color: #721C24; /* Couleur du texte */
+                padding: 15px; /* Espacement interne */
+                border-radius: 8px; /* Coins arrondis */
+                border: 1px solid #F5C6CB; /* Bordure légère */
+                margin-bottom: 20px; /* Espace en dessous */
+            }
+            </style>
+            <div class="custom-box">
+                L'investissement en SCPI a pour fonction première la distribution de revenus à une échéance donnée. Le but n'est pas la revente à court, moyen, moyen-long terme.
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
         plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
 
