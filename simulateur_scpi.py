@@ -52,14 +52,12 @@ st.markdown("""
         font-size: 14px;
         font-style: italic;
         color: #202021;
-        margin-top: 10px;
     }
 
     /* Style pour les informations sur l'auteur */
     .author-info {
         font-size: 14px;
         color: #CBA325;
-        margin-top: 5px;
     }
             
     [data-testid="stSidebar"] > div:first-child {
@@ -78,13 +76,16 @@ st.markdown("""
 
 
 st.markdown(f"""
-    <div class="title-container">
-        <h1 class="main-title">Simulateur SCPI</h1>
-        <p class="subtitle">Investissez dans de l'immobilier professionnel à partir de 50 000€</p>
+<div class="title-container">
+    <h1 class="main-title">Simulateur SCPI</h1>
+    <p class="subtitle">Investissez dans de l'immobilier professionnel à partir de 50 000€</p>
+    <div class="info-container">
         <div class="update-info">Dernière mise à jour : {date.today().strftime('%d/%m/%Y')}</div>
         <div class="author-info">Par Antoine Berjoan</div>
     </div>
+</div>
 """, unsafe_allow_html=True)
+
 
 
 
