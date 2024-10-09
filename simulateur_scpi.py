@@ -19,8 +19,13 @@ st.set_page_config(
 st.markdown("""
     <style>
     [data-testid="stSidebar"] > div:first-child {
-        background: radial-gradient(circle, #EAEAEA, #FBFBFB);
+        background: radial-gradient(circle, #8DB3C5, #FBFBFB);
         border-right: 2px solid #CBA325;
+        box-shadow: 
+            0 2px 4px rgba(22, 66, 91, 0.1),
+            0 4px 8px rgba(22, 66, 91, 0.1),
+            0 8px 16px rgba(22, 66, 91, 0.1),
+            0 16px 32px rgba(22, 66, 91, 0.1);
     }
             
     /* StSlider */
