@@ -32,19 +32,6 @@ st.markdown("""
             0 16px 32px rgba(22, 66, 91, 0.2), /* Ombre plus intense */
             0 24px 48px rgba(22, 66, 91, 0.2); /* Ombre encore plus diffuse */
     }
-            
-    div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { 
-        display: flex;
-        justify-content: center;
-        text-align: left;
-        width: 100%;
-        font-weight: 900 !important;
-        margin-bottom: 0px;
-    }
-    div[data-testid="stSlider"] p {
-    color: #E8B0AA !important;
-    font-size: 23px !important;
-    }
     </style>
 """, unsafe_allow_html=True)
 
