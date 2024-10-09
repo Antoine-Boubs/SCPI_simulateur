@@ -199,22 +199,46 @@ st.markdown("""
     }   
 
     input[type="number"] {
-        color: #202021 ;
+        color: #D56844 ;
         border: 0.5px solid #8DB3C5;
         background-color: rgba(141, 179, 197, 0.2);
         font-size: 16px !important;
         font-weight: 500;
+    }   
+
+    div[role="radiogroup"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
     }  
+    div[role="radiogroup"] label {
+        background-color: transparent;
+        padding: 10px 15px;
+        margin: 0 5px;
+        border-radius: 15px;
+        transition: border-color 0.3s, color 0.3s;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border: 2px solid #CBA325;
+        min-width: 100px;
+    }
+
             
-    [data-testid="stNumberInput-StepDown"], button[data-testid="stNumberInput-StepUp"] {
-        background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
-        color: #16425B;
-        border: none !important;
-        border-radius: 3px !important;
-        padding: 20px 10px !important;
-        width: 10px !important;    
-        height: 10px !important;   
-    }    
+             
+    div[role="radiogroup"] label:hover {
+        border-color: #16425b;
+    }  
+    div[role="radiogroup"] label div {
+        display: flex;
+        align-items: center;
+    }
+    div[role="radiogroup"] label div p {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 0 10px;
+    } 
     </style>
 """, unsafe_allow_html=True)
 
