@@ -213,20 +213,18 @@ st.markdown("""
         justify-content: center;
         align-items: center;
         margin-top: 10px;
-        background-color: transparent;
+        background-color: rgba(141, 179, 197, 0.2);
         padding: 10px 15px;
         margin: 0 5px;
         border-radius: 15px;
-        transition: border-color 0.3s;
-        cursor: pointer;
+        transition: all 0.3s;
         display: flex;
         align-items: center;
-        border: 2px solid #CBA325;
         min-width: 100px;
     }
 
     div[role="radiogroup"] label:hover {
-        border-color: #16425b;
+        border: 2px solid #16425b;
     }  
     div[role="radiogroup"] label div {
         display: flex;
