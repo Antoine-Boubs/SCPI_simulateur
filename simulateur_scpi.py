@@ -418,9 +418,9 @@ def graphique_loyers_francais_vs_etrangers(df_investissement):
         font-weight: 700; 
         margin-top: 30px; 
         margin-bottom: 0px; 
-        background-color: rgba(141, 179, 197, 0.4); 
+        background-color: rgba(141, 179, 197, 0.2); 
         padding: 20px 15px; 
-        border-radius: 10px;
+        border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         '> Vos revenus nets (Français vs Étranger)
     </h2>
