@@ -210,7 +210,7 @@ st.markdown("""
 
     div[role="radiogroup"] {
         display: flex;
-        justify-content: center;
+        justify-content: space-between; /* Espace maximal entre les éléments */
         align-items: center;
         margin-top: 10px;
         background-color: rgba(141, 179, 197, 0.2);
@@ -218,8 +218,16 @@ st.markdown("""
         border-radius: 15px;
         min-width: 100%;
     }
+
+    div[role="radiogroup"] label:first-of-type {
+        margin-left: 20px; /* Déplace "Avant" un peu plus à gauche */
+    }
+
+    div[role="radiogroup"] label:last-of-type {
+        margin-right: 20px; /* Déplace "Après" un peu plus à droite */
+    }
     
-    div[role="radiogroup"] label div p {
+    div[role="radiogroup"] label {
         font-size: 16px;
         font-weight: 500;
         color: #202021;
@@ -432,7 +440,7 @@ def create_line_segments(x, y, color):
 
 def graphique_loyers_francais_vs_etrangers(df_investissement): 
     couleur_francais = '#16425B' 
-    couleur_francais_aire = '#8DB3C5' 
+    couleur_francais_aire = 'background-color: rgba(141, 179, 197, 0.2)' 
     couleur_etranger = '#CBA325' 
     couleur_etranger_aire = '#F1D87A'
 
