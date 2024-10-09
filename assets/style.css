@@ -215,3 +215,63 @@ p {
         color: #202021;
         margin: 0 0 0 5px;
     }
+
+
+
+    button[data-baseweb="tab"] {
+        background-color:rgba(141, 179, 197, 0.2); 
+        border-radius: 10px;
+        padding: 10px 20px; 
+        box-shadow: 0 4px 8px rgba(203, 163, 37, 0.2);
+        margin: 10px; 
+    }
+    
+    div[data-baseweb="tab-list"] {
+        display: flex;
+        justify-content: center;
+    }
+
+    button[data-baseweb="tab"] p {
+        font-size: 16px;
+        color: #16425B;
+        font-weight: 600;
+    }
+
+    button[data-baseweb="tab"]:not([aria-selected="true"]) {
+        background-color: rgba(141, 179, 197, 0.2); 
+        color: #202021; 
+        box-shadow: 0 4px 8px rgba(203, 163, 37, 0.2);            
+        font-weight: 400; 
+    }
+
+    button[data-baseweb="tab"]:hover {
+        background-color: rgba(141, 179, 197, 0.7); 
+        color: #202021;
+        cursor: pointer;
+    }
+
+    [data-baseweb="tab-highlight"] {
+        background-color: #16425b;
+        height: 2px;
+        border-radius: 2px;
+    }
+        
+    div[data-baseweb="tab-border"][role="presentation"] {
+        border: 1px solid #CBA325; 
+        border-radius: 5px;
+        margin: 10px;
+    }
+        
+        
+    .stSidebar .stHeading h2 {
+        color: #16425B; 
+        font-size: 20px; 
+        font-weight: 700; 
+        margin-top: -30px; /* Espace au-dessus */
+        margin-bottom: 20px; /* Espace en dessous */
+        text-align: center; 
+        background-color:rgba(141, 179, 197, 0.2); 
+        padding: 10px 15px; /* Ajouter du padding pour l'espacement */
+        border-radius: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
