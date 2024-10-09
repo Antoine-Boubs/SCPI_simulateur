@@ -568,9 +568,9 @@ def main():
     with onglet1:            
         col1, col2, col3, col4 = st.columns(4)
 
-        # Calcul pour St.Metric
-        effort_net_total = sum(df_investissement["Effort Annuel Net"][:params["duree_pret"] // 12])+ (params["apport"])
-        loyer_apres_pret = params["montant_investissement"] * params["rendement_souhaite"] * (1 + params["taux_revalorisation"])**(params["duree_pret"] // 12)
+        # Calculs pour St.Metric
+        effort_net_total = sum(df_investissement["Effort Annuel Net"][:params["duree_pret"] // 12]) + params["apport"]
+        loyer_apres_pret = params["montant_investissement"] * params["rendement_souhaite"] * (1 + params["taux_revalorisation"]) ** (params["duree_pret"] // 12)
         rendement_brut = (loyer_apres_pret / effort_net_total) * 100
         revenu_mensuel = loyer_apres_pret / 12
         effort_mensuel_moyen = sum(df_investissement["Effort Mensuel Net"][:params["duree_pret"] // 12]) / (params["duree_pret"] // 12)
@@ -578,7 +578,7 @@ def main():
         loyer_net_apres_pret = loyer_apres_pret - impot_apres_pret
         rendement_net = (loyer_net_apres_pret / effort_net_total) * 100
 
-        # CSS Metric
+        # CSS pour les cartes
         st.markdown("""
             <style>
             .custom-card-1 .stMetric {
@@ -609,43 +609,34 @@ def main():
                 border-radius: 10px;
             }
             </style>
-            """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
-        st.markdown('<div class="custom-card-1">', unsafe_allow_html=True)
-        st.metric(label="Loyer Mensuel", value=f"{revenu_mensuel:.0f}€")
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        st.markdown('<div class="custom-card-2">', unsafe_allow_html=True)
-        st.metric(label="Effort Mensuel", value=f"{effort_mensuel_moyen:.0f}€")
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        st.markdown('<div class="custom-card-3">', unsafe_allow_html=True)
-        st.metric(label="Rendement Brut", value=f"{rendement_brut:.2f}%")
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        st.markdown('<div class="custom-card-4">', unsafe_allow_html=True)
-        st.metric(label="Rendement Net", value=f"{rendement_net:.2f}%")
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        
-
-            
+        # Afficher les métriques avec les styles personnalisés
         with col1:
-            st.metric("Loyer Mensuel", f"{revenu_mensuel:.0f}€")
+            st.markdown('<div class="custom-card-1">', unsafe_allow_html=True)
+            st.metric(label="Loyer Mensuel", value=f"{revenu_mensuel:.0f}€")
+            st.markdown('</div>', unsafe_allow_html=True)
 
         with col2:
-                st.metric("Effort Mensuel", f"{effort_mensuel_moyen:.0f}€", help='Apport non inclus dans le calcul')
-                
+            st.markdown('<div class="custom-card-2">', unsafe_allow_html=True)
+            st.metric(label="Effort Mensuel", value=f"{effort_mensuel_moyen:.0f}€", help='Apport non inclus dans le calcul')
+            st.markdown('</div>', unsafe_allow_html=True)
+
         with col3:
-            st.metric("Rendement Brut", f"{rendement_brut:.2f}%")
+            st.markdown('<div class="custom-card-3">', unsafe_allow_html=True)
+            st.metric(label="Rendement Brut", value=f"{rendement_brut:.2f}%")
+            st.markdown('</div>', unsafe_allow_html=True)
 
         with col4:
-            st.metric("Rendement Net", f"{rendement_net:.2f}%")
+            st.markdown('<div class="custom-card-4">', unsafe_allow_html=True)
+            st.metric(label="Rendement Net", value=f"{rendement_net:.2f}%")
+            st.markdown('</div>', unsafe_allow_html=True)
 
 
-        plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
 
-        graphique_loyers_francais_vs_etrangers(df_investissement)
+            plot_amortissement(df_amortissement, df_investissement, duree_pret, params['apport'])
+
+            graphique_loyers_francais_vs_etrangers(df_investissement)
         
 
             
