@@ -19,7 +19,13 @@ st.set_page_config(
 st.markdown("""
     <style>
     [data-testid="stSidebar"] > div:first-child {
-        background: #DCF3EA;
+        background: #DCF3EA; /* Couleur de fond */
+        border-radius: 12px; /* Optionnel : arrondir les coins */
+        box-shadow: 
+            0 4px 6px rgba(0, 0, 0, 0.1),  /* Ombre douce et proche */
+            0 8px 12px rgba(0, 0, 0, 0.1), /* Ombre moyenne */
+            0 16px 24px rgba(0, 0, 0, 0.1); /* Ombre plus diffuse */
+        padding: 20px; /* Optionnel : ajouter un padding pour plus de style */
     }
             
     div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label StSlider */
