@@ -229,9 +229,9 @@ def create_line_segments(x, y, color):
 
 def graphique_loyers_francais_vs_etrangers(df_investissement): 
     couleur_francais = '#16425B' 
-    couleur_francais_aire = '#8DB3C5' 
+    couleur_francais_aire = 'rgba(141, 179, 197, 0.3)' 
     couleur_etranger = '#CBA325' 
-    couleur_etranger_aire = '#F1D87A'
+    couleur_etranger_aire = 'rgba(241, 216, 122, 0.3)'
 
     # Calculer la différence et sa valeur absolue
     df_investissement['Différence'] = df_investissement['Loyer Net Français'] - df_investissement['Loyer Net Étranger']
