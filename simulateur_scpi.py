@@ -20,7 +20,7 @@ st.markdown("""
     <style>
     [data-testid="stSidebar"] > div:first-child {
         background: #DCF3EA;
-        padding:20px;
+        padding:60px;
     }
             
     div[data-testid="stSlider"] label[data-testid="stWidgetLabel"] div[data-testid="stMarkdownContainer"] p { /* Label StSlider */
