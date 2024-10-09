@@ -157,6 +157,10 @@ st.markdown("""
         font-size: 40px !important;
         font-weight: 600 !important;
         color: #D56844;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
     }   
 
     div[data-testid="stSlider"], div[data-testid="stNumberInput"], div[data-testid="stCheckbox"], div[data-testid="stSelectbox"]{
