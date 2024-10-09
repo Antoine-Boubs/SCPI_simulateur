@@ -203,9 +203,17 @@ st.markdown("""
         border: 0.5px solid #8DB3C5;
         background-color: rgba(141, 179, 197, 0.2);
         font-size: 16px !important;
-        font-weight: 600;
+        font-weight: 500;
     }  
-            
+    button[data-testid="stNumberInput-StepDown"], button[data-testid="stNumberInput-StepUp"] {
+        background: linear-gradient(to right, #16425b 0%, #8DB3C5 83.3333%, rgba(141, 179, 197, 0.25) 83.3333%, rgba(141, 179, 197, 0.25) 100%);
+        color: #16425B;
+        border: none !important;
+        border-radius: 3px !important;
+        padding: 20px 10px !important;
+        width: 10px !important;    
+        height: 10px !important;   
+    }    
     </style>
 """, unsafe_allow_html=True)
 
