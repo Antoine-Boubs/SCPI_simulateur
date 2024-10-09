@@ -21,6 +21,13 @@ with open("assets/style.css") as f:
 # MAIN APP
 st.markdown("""
     <style>
+    <div class="title-container">
+        <h1 class="main-title">Simulateur SCPI</h1>
+        <p class="subtitle">Investissez dans de l'immobilier professionnel à partir de 50 000€</p>
+        <div class="update-info">Dernière mise à jour : {date.today().strftime('%d/%m/%Y')}</div>
+        <div class="author-info">Par Antoine Berjoan</div>
+    </div>
+            
     [data-testid="stSidebar"] > div:first-child {
         background: #DCF3EA; 
         border-radius: 15px; 
