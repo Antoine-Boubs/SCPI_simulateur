@@ -32,38 +32,24 @@ st.markdown(f"""
 
 st.markdown("""
     <style>
-         div[data-baseweb="tab"] > button {
-            font-size: 8px; /* Taille du texte */
-            font-weight: bold;
-            color: #16425B; /* Couleur du texte */
-            background-color: rgba(241, 216, 122, 0.3); /* Fond de couleur similaire */
+        button[data-baseweb="tab"] {
+            background-color:rgba(141, 179, 197, 0.2); 
             border-radius: 10px;
-            padding: 10px 20px; /* Ajouter du padding pour l'espacement */
-            border: 2px solid #16425B;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 5px; /* Espace entre les onglets */
+            padding: 10px 20px; 
+            box-shadow: 0 4px 8px rgba(203, 163, 37, 0.2);
+            margin: 10px; 
         }
 
-        div[data-testid="stTab"] p {
-            font-size: 8px; /* Taille du texte */
-            font-weight: 100;
-            
-        div [data-baseweb="tab"] {
-            background-color: #E8F0F2;
-            border-radius: 10px;
-            padding: 10px 15px;
-            font-weight: bold;
-            font-size: 18px;
+        button[data-baseweb="tab"] p {
+            font-size: 16px;
             color: #16425B;
-            margin-right: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
+            font-weight: 600;
         }
 
-        [data-baseweb="tab"]:not([aria-selected="true"]) {
-            background-color: #FBFBFB; 
+        button[data-baseweb="tab"]:not([aria-selected="true"]) {
+            background-color: rgba(141, 179, 197, 0.2); 
             color: #202021; 
-            box-shadow: 0px 4px 8px rgba(251, 251, 251, 0.8);;
+            box-shadow: 0 4px 8px rgba(203, 163, 37, 0.2);            
             font-weight: 400; 
         }
 
@@ -75,7 +61,7 @@ st.markdown("""
 
         [data-baseweb="tab-highlight"] {
             background-color: #16425b;
-            height: 3px;
+            height: 2px;
             border-radius: 2px;
         }
             
@@ -93,7 +79,7 @@ st.markdown("""
             margin-top: -30px; /* Espace au-dessus */
             margin-bottom: 20px; /* Espace en dessous */
             text-align: center; 
-            background-color: #'rgba(241, 216, 122)'; 
+            background-color:rgba(141, 179, 197, 0.2); 
             padding: 10px 15px; /* Ajouter du padding pour l'espacement */
             border-radius: 10px; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
