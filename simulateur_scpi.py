@@ -20,13 +20,12 @@ st.markdown("""
     <style>
     [data-testid="stSidebar"] > div:first-child {
         background: #FBFBFB;
-        border-right: 2px solid #CBA325;
         border-radius: 20px
         box-shadow: 
-            0 2px 4px rgba(22, 66, 91, 0.1),
-            0 4px 8px rgba(22, 66, 91, 0.1),
-            0 8px 16px rgba(22, 66, 91, 0.1),
-            0 16px 32px rgba(22, 66, 91, 0.1);
+            0 4px 8px rgba(141, 179, 197, 0.2), /* Couleur #8DB3C5 avec opacité 0.2 */
+            0 8px 16px rgba(22, 66, 91, 0.2),  /* Couleur #16425B avec opacité 0.2 */
+            0 16px 32px rgba(141, 179, 197, 0.3), /* Couleur #8DB3C5 avec opacité 0.3 */
+            0 32px 64px rgba(22, 66, 91, 0.3); /* Couleur #16425B avec opacité 0.3 */
     }
             
     /* StSlider */
