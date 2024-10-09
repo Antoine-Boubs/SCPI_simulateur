@@ -40,7 +40,7 @@ st.markdown("""
         width: 100%;
         font-size: 13px !important;
         font-weight: 900 !important;
-        color: #E8B0AA !important; /* Couleur rose */
+        color: #F0D97A !important; /* Couleur rose */
         margin-bottom: 0px;
     }
 
